@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 11:14:20 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/03/13 11:08:24 by yoonslee         ###   ########.fr       */
+/*   Created: 2023/03/13 11:00:04 by yoonslee          #+#    #+#             */
+/*   Updated: 2023/03/13 11:00:41 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-/*return the address of first c occured in s*/
-char	*ft_strrchr(const char *s, int c)
+void	error(void)
 {
-	char	*ptr;
-
-	ptr = NULL;
-	while (*s != '\0')
-	{
-		if (*s == (unsigned char)c)
-			ptr = (char *)s;
-		s++;
-	}
-	if ((unsigned char)c == '\0')
-		return ((char *)s);
-	return (ptr);
+	ft_putstr_fd("Error\n", 2);
 }
+

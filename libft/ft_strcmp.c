@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 11:14:20 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/03/13 11:08:24 by yoonslee         ###   ########.fr       */
+/*   Created: 2023/03/13 11:17:42 by yoonslee          #+#    #+#             */
+/*   Updated: 2023/03/13 11:26:39 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-/*return the address of first c occured in s*/
-char	*ft_strrchr(const char *s, int c)
+/*return 0 if two strings are same*/
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	char	*ptr;
+	int				i;
+	unsigned char	*st1;
+	unsigned char	*st2;
 
-	ptr = NULL;
-	while (*s != '\0')
+	st1 = (unsigned char *)s1;
+	st2 = (unsigned char *)s2;
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
 	{
-		if (*s == (unsigned char)c)
-			ptr = (char *)s;
-		s++;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
-	if ((unsigned char)c == '\0')
-		return ((char *)s);
-	return (ptr);
+	return (s1[i] - s2[i]);
 }

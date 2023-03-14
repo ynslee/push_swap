@@ -6,12 +6,16 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:48:23 by yoonslee          #+#    #+#             */
-/*   Updated: 2022/11/03 09:58:55 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/03/13 11:13:09 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+compare s1 and s2 till the length of n.
+returns positive if s1's & s2's first unmatching
+character exists and *s1>*s2
+ */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t			i;
