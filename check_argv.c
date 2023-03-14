@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:25:54 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/03/09 13:17:19 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:02:16 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,17 @@ static int	arg_is_number(char **argv)
 	int	j;
 
 	i = 1;
-	j = 1;
-	if ((argv[i] == '+' || argv[i] == '-' ) && argv[i + 1] != '\0')
-		i++;
+	j = 0;
+	if ((argv[i][j] == '+' || argv[i][j] == '-' ) && argv[i][j + 1] != '\0')
+		j++;
 	while (argv[i] && ft_isdigit(argv[i][j]))
 	{
-		j++;
-		if (argv[i][j] = '\0')
+		while (argv[i][j] && (ft_isdigit(argv[i][j]) == 1))
+		{
+			if (ft_isdigit(argv[i][j]) == 0)
+				//exit
+		}
+		i++;
 	}
 	if (argv[i] != '\0' && !ft_isdigit(argv[i]))
 		return (0);
@@ -76,45 +80,58 @@ static int	have_duplicates(char **argv)
 	return (0);
 }
 
-/* arg_is_zero:
-*   Checks the argument is a 0 to avoid 0 +0 -0 duplicates
-*	and 0 0000 +000 -00000000 too.
-*   Return: 1 if the argument is a zero, 0 if it contains
-*	anything else than a zero.
-*/
-static int	arg_is_zero(char *argv)
+int	check_if_double(char *str, char c, int position)
 {
 	int	i;
 
 	i = 0;
-	if (is_sign(argv[i]))
+	while (i < position)
+	{
+		if (str[i] == c)
+			return (0);
 		i++;
-	while (argv[i] && argv[i] == '0')
-		i++;
-	if (argv[i] != '\0')
-		return (0);
+	}
 	return (1);
 }
 
-/* is_correct_input:
-*   Checks if the given arguments are all numbers, without duplicates.
-*   Return: 1 if the arguments are valid, 0 if not.
-*/
-int	is_correct_input(char **argv)
+
+int	main(int argc, char **argv)
 {
 	int	i;
-	int	nb_zeros;
+	int	i2;
 
-	nb_zeros = 0;
-	i = 1;
-	while (argv[i])
+	i = 0;
+	if (argc == 3)
 	{
-		if (!arg_is_number(argv[i]))
-			return (0);
-		nb_zeros += arg_is_zero(argv[i]);
-		i++;
+		while (argv[1][i] != '\0')
+		{
+			i2 = 0;
+			while (argv[2][i2] != '\0')
+			{
+				if (argv[1][i] == argv[2][i2])
+				{
+					if (check_if_double(argv[1], argv[1][i], i))
+					{
+						write (1, &argv[1][i], 1);
+						break ;
+					}
+				}
+				i2++;
+			}
+			i++;
+		}
 	}
-	if (nb_zeros > 1)
+	write (1, "\n", 1);
+}
+
+/*  Checks if the given arguments are all numbers, without duplicates.
+*   Return: 1 if the arguments are valid, 0 if not.*/
+int	check_argv(int argc, char **argv)
+{
+	int	i;
+
+	i = 1;
+	if (!arg_is_number(argv[i]))
 		return (0);
 	if (have_duplicates(argv))
 		return (0);

@@ -1,0 +1,7 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/yoonslee/Desktop/pushswap'
+cc -c -Wall -Wextra -Werror -g -fsanitize=address small_element.c 
+make -C libft all
+cc -Wall -Wextra -Werror -g -fsanitize=address small_element.o libft/libft.a -o push_swap
+make: Leaving directory `/Users/yoonslee/Desktop/pushswap'
+ 

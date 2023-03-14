@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:11:53 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/03/13 16:49:47 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:52:46 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		return ;
-	if (is_valid_input(argc, argv) == 1)
+	if (argc == 2)
+		//split the argv to be able to check it.
+	check_argv(argc, argv);//check if it is the right argv
 	head = ft_calloc(1, sizeof(t_dlist_node *));
 	head->prev = NULL;
 	head->value = 
