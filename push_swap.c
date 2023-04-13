@@ -6,11 +6,12 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:11:53 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/03/14 15:52:46 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/04/13 17:32:55 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 /*
 1. no integer parameters - "Error\n"
@@ -23,23 +24,22 @@ the instruction phase. The program must display "Error\n" on standarderror.
 7. if it is one number, it is already sorted so you don't do anything but just return.
 */
 
-void	create_data_stack()
-{
-	
-}
+
+/*1. Number of input is 1.
+2. Number of input is 2. means a quoted string(split function)
+3. Numbe of input is greater than 2.*/
 
 int	main(int argc, char **argv)
 {
-	t_dlist_node	*head;
+	t_ps	ps;
+	int		i;
 
+	i = 0;
 	if (argc == 1)
-		return ;
-	if (argc == 2)
-		//split the argv to be able to check it.
-	check_argv(argc, argv);//check if it is the right argv
-	head = ft_calloc(1, sizeof(t_dlist_node *));
-	head->prev = NULL;
-	head->value = 
-
+		return (0);
+	get_real_args(argc, argv, &ps);
+	ft_printf("result of real argc func: %d\n", ps.real_argc);
+	ft_printf("result of real argv func: %s\n", ps.real_argv[0]);
+	check_real_argv(&ps);
 	return (0);
 }

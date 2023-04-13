@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:53:03 by yoonslee          #+#    #+#             */
-/*   Updated: 2022/11/09 16:07:18 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/04/13 17:14:19 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *str)
 		str++;
 	if (*str == '-')
 		neg = neg * -1;
-	if (*str == '-' || *str == '+')
+	while (*str == '-' || *str == '+')
 		str++;
 	while (*str >= '0' && *str <= '9')
 	{
