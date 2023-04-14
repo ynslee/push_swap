@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Fri Apr 14 10:34:06 2023
+# Make data base, printed on Fri Apr 14 14:58:57 2023
 
 # Variables
 
@@ -40,7 +40,6 @@ OBJS = $(SRCS:.c=.o)
 VSCODE_CWD = /
 # environment
 Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.gNcOqWg288/Render
- 
 # environment
 PATH = /Users/yoonslee/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 # environment
@@ -154,13 +153,14 @@ VSCODE_PID = 64578
 
 # Directories
 
-# . (device 16777227, inode 661095): 18 files, no impossibilities.
+# . (device 16777227, inode 661095): 19 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 # No implicit rules.
+ 
 
 # Files
 
@@ -303,6 +303,6 @@ small_element.o: small_element.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Apr 14 10:34:06 2023
+# Finished Make data base on Fri Apr 14 14:58:57 2023
 
  
