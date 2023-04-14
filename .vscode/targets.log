@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Fri Apr 14 14:58:57 2023
+# Make data base, printed on Fri Apr 14 15:24:29 2023
 
 # Variables
 
@@ -160,7 +159,6 @@ VSCODE_PID = 64578
 # Implicit Rules
 
 # No implicit rules.
- 
 
 # Files
 
@@ -303,6 +301,6 @@ small_element.o: small_element.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Apr 14 14:58:57 2023
+# Finished Make data base on Fri Apr 14 15:24:29 2023
 
  
