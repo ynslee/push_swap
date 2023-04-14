@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:11:53 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/04/13 17:32:55 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/04/14 11:17:36 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ int	main(int argc, char **argv)
 	ft_printf("result of real argc func: %d\n", ps.real_argc);
 	ft_printf("result of real argv func: %s\n", ps.real_argv[0]);
 	check_real_argv(&ps);
+	ft_printf("result of real argc func: %d\n", ps.real_argc);
+	ft_printf("check errors 1\n");
 	return (0);
 }

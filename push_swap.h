@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 11:39:33 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/04/13 17:33:25 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/04/14 13:07:00 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int			get_real_args(int argc, char **argv, t_ps *ps);
 
 
 int			check_real_argv(t_ps *ps);
+void		arg_is_number(int i, int j, t_ps *ps);
+int			ft_strlen_ps(char *str);
 
 /*error management*/
 void		ft_error(void);

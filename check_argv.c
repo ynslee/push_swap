@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:25:54 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/04/13 17:42:59 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/04/14 14:42:09 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,57 @@ the instruction phase. The program must display "Error\n" on standarderror.
 
 #include "push_swap.h"
 
+int	ft_strlen_ps(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
 /*Checks if argv is numbers only*/
-static int	arg_is_number(t_ps *ps)
+void	arg_is_number(int i, int j, t_ps *ps)
+{
+	int				neg;
+	long long int	res;
+
+	while (i < ps->real_argc)
+	{
+		neg = 1;
+		res = 0;
+		j = 0;
+		if (ps->real_argv[i][j] == '-')
+			neg = -1;
+		if (ps->real_argv[i][j] == '+' || ps->real_argv[i][j] == '-')
+			j++;
+		while (j < ft_strlen_ps(ps->real_argv[i]))
+		{
+			ft_printf("len is %d\n", ft_strlen_ps(ps->real_argv[i]));
+			if (ft_isdigit(ps->real_argv[i][j]) == 0)
+				ft_error();
+			res = res * 10 + (ps->real_argv[i][j] - 48);
+			j++;
+		}
+		ft_printf("res is %d\n", res);
+		if ((neg * res) > 2147483647 || (neg * res) < -2147483648)
+			ft_error();
+		ps->real_argv[i][0] = neg * res;
+		ft_printf("real argv is %s\n", ps->real_argv[i]);
+		i++;
+	}
+}
+
+/* have_duplicates:
+*   Checks if the argument list has duplicate numbers.
+*   Return: error if a duplicate is found, 0 if there are none.
+*/
+static int	have_duplicates(t_ps *ps)
 {
 	int	i;
 	int	j;
@@ -32,30 +81,8 @@ static int	arg_is_number(t_ps *ps)
 	i = 0;
 	while (i < ps->real_argc)
 	{
-		j = 0;
-		while (ps->real_argv[i][j] != NULL)
-		{
-			if (j == 0)
-		
-			j++;
-		}
-	}
-}
-
-/* have_duplicates:
-*   Checks if the argument list has duplicate numbers.
-*   Return: 1 if a duplicate is found, 0 if there are none.
-*/
-static int	have_duplicates(t_ps *ps)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	while (ps->real_argv[i])
-	{
-		j = 1;
-		while (ps->real_argv[j])
+		j = i + 1;
+		while (j < ps->real_argc)
 		{
 			if (j != i && ft_strcmp(ps->real_argv[i], ps->real_argv[j]) == 0)
 				ft_error();
@@ -70,9 +97,15 @@ static int	have_duplicates(t_ps *ps)
 *   Return: 1 if the arguments are valid, 0 if not.*/
 int	check_real_argv(t_ps *ps)
 {
-	if (!arg_is_number(ps))
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	arg_is_number(i, j, ps);
+	ft_printf("no errors args_number\n");
+	if (have_duplicates(ps) != 0)
 		return (0);
-	if (have_duplicates(ps))
-		return (0);
+	ft_printf("no errors duplicates\n");
 	return (1);
 }
