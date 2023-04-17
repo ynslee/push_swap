@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:11:53 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/04/14 11:17:36 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:29:24 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,14 @@ int	main(int argc, char **argv)
 	int		i;
 
 	i = 0;
-	if (argc == 1)
+	if (argc <= 2)
 		return (0);
 	get_real_args(argc, argv, &ps);
-	ft_printf("result of real argc func: %d\n", ps.real_argc);
-	ft_printf("result of real argv func: %s\n", ps.real_argv[0]);
+	if (init_stack(&ps) != 1)
+		exit(0);
 	check_real_argv(&ps);
-	ft_printf("result of real argc func: %d\n", ps.real_argc);
-	ft_printf("check errors 1\n");
+	ft_printf("argv check done\n");
+	// ft_printf("result of real argc func: %d\n", ps.real_argc);
+	// ft_printf("check errors 1\n");
 	return (0);
 }

@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Fri Apr 14 15:24:29 2023
+# Make data base, printed on Mon Apr 17 13:11:46 2023
 
 # Variables
 
@@ -38,15 +39,15 @@ OBJS = $(SRCS:.c=.o)
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.gNcOqWg288/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.UOZmb0iyff/Render
 # environment
-PATH = /Users/yoonslee/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+PATH = /Users/yoonslee/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.rvDMJdLUBJ/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.cS8zKkhzRp/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -60,7 +61,7 @@ HOME = /Users/yoonslee
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/yoonslee/Library/Application Support/Code/CachedData/b7886d7461186a5eac768481578c1d7ca80e2d21
+VSCODE_CODE_CACHE_PATH = /Users/yoonslee/Library/Application Support/Code/CachedData/704ed70d4fd1c6bd6342c436f1ede30d1cff4710
 # environment
 LOGNAME = yoonslee
 # environment
@@ -110,15 +111,15 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
+XPC_SERVICE_NAME = com.microsoft.VSCode.688
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+# environment
+VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x14E7:0x0:0x0
-# environment
-COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -127,8 +128,6 @@ MAKEFILES :=
 LC_ALL = C
 # makefile (from `Makefile', line 17)
 HEADER = push_swap.h
-# environment
-SECURITYSESSIONID = 186a7
 # automatic
 ^F = $(notdir $^)
 # default
@@ -142,9 +141,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 64578
+VSCODE_PID = 65458
 # variable set hash-table stats:
-# Load=66/1024=6%, Rehash=0, Collisions=4/101=4%
+# Load=65/1024=6%, Rehash=0, Collisions=4/100=4%
 
 # Pattern-specific Variable Values
 
@@ -301,6 +300,6 @@ small_element.o: small_element.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Apr 14 15:24:29 2023
+# Finished Make data base on Mon Apr 17 13:11:46 2023
 
  

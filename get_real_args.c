@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:20:20 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/04/14 11:47:12 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:53:56 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	get_real_args(int argc, char **argv, t_ps *ps)
 		ps->real_argv = argv + 1;
 	else
 	{
-		ps->real_argv = malloc(ps->real_argc * sizeof(char *));
+		ps->real_argv = malloc((ps->real_argc + 1) * sizeof(char *));
 		if (!ps->real_argv)
 			return (0);
 		get_real_argv(ps, argv);

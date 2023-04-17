@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:25:54 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/04/14 15:12:26 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/04/17 14:21:31 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,11 @@ void	arg_is_number(int i, int j, t_ps *ps)
 			if (ft_isdigit(ps->real_argv[i][j]) == 0)
 				ft_error();
 			res = res * 10 + (ps->real_argv[i][j] - 48);
-			// ft_printf("res is %d\n", res);
 			j++;
 		}
-		// ft_printf("final res is %d\n", res);
 		if ((neg * res) > 2147483647 || (neg * res) < -2147483648)
 			ft_error();
-		ps->real_argv[i][0] = neg * res;
-		// ps->real_argv[i][1] = '\0';
-		// ft_printf("real argv is %s\n", ps->real_argv[i]);
+		ps->stack_a[i] = neg * res;
 		i++;
 	}
 }
@@ -104,9 +100,7 @@ int	check_real_argv(t_ps *ps)
 	i = 0;
 	j = 0;
 	arg_is_number(i, j, ps);
-	// ft_printf("errors args_number\n");
 	if (have_duplicates(ps) != 0)
 		return (0);
-	// ft_printf("errors duplicates\n");
 	return (1);
 }
