@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 11:39:33 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/02 15:09:24 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/02 16:39:01 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,9 @@ void		five_element(t_ps *ps);
 void		sort_init(t_ps *ps);
 void		sort_algo(t_ps *ps);
 int			find_min(t_ps *ps);
-int			find_medium(t_ps *ps, int i);
-void		ft_swap(int a, int b);
+int			find_median(t_ps *ps);
+int			find_median2(t_ps *ps);
+void		ft_swap(int *a, int *b);
 
 /*allowed functions only*/
 void		sa(t_ps *ps);

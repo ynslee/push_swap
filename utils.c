@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:36:09 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/02 15:38:55 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/02 16:36:27 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,50 +64,4 @@ void	sort_init(t_ps *ps)
 	return ;
 }
 
-/*find the medium and push it to other stack*/
-void	sort_algo(t_ps *ps)
-{
-	int	i;
 
-	i = 0;
-	ps->medium = find_medium(ps, i);
-	ft_printf("medium is %d\n", ps->medium);
-	while (i < ps->len_a - 1)
-	{
-		if (ps->stack_a[i] <= ps->medium)
-			pb(ps);
-		i++;
-	}
-	ft_printf("error!\n");
-	if (ps->len_a > 3)
-		sort_algo(ps);
-}
-
-int	find_medium(t_ps *ps, int i)
-{
-	int	temp;
-	int	j;
-
-	ps->array = ps->stack_a;
-	while (i < ps->len_a - 1)
-	{
-		while (j < ps->len_a - i - 1)
-		{
-			j = 0;
-			if (ps->array[j] > ps->array[j + 1])
-			{
-				temp = ps->array[j];
-				ps->array[j] = ps->array[j + 1];
-				ps->array[j + 1] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
-	if (ps->len_a % 2 != 0)
-		temp = ps->array[ps->len_a / 2];
-	else
-		temp = ps->array[(ps->len_a - 1) / 2];
-	ps->array = NULL;
-	return (temp);
-}

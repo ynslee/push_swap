@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Tue May  2 15:27:47 2023
+# Make data base, printed on Tue May  2 16:37:12 2023
 
 # Variables
 
@@ -26,6 +26,7 @@ VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 @F = $(notdir $@)
 # makefile
 CURDIR := /Users/yoonslee/Desktop/pushswap
+ 
 # makefile
 SHELL = /bin/sh
 # environment
@@ -34,7 +35,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","osLocale":"en","availableLanguages":{},"_
 _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
-# makefile (from `Makefile', line 16)
+# makefile (from `Makefile', line 17)
 OBJS = $(SRCS:.c=.o)
 # environment
 VSCODE_CWD = /
@@ -45,7 +46,6 @@ PATH = /Users/yoonslee/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/u
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
- 
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
 SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.GFLeUvyB86/Listeners
@@ -78,7 +78,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 14)
-SRCS = push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+SRCS = push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 # environment
 SHLVL = 1
 # environment
@@ -127,7 +127,7 @@ MAKEFILES :=
 <F = $(notdir $<)
 # environment
 LC_ALL = C
-# makefile (from `Makefile', line 18)
+# makefile (from `Makefile', line 19)
 HEADER = push_swap.h
 # environment
 SECURITYSESSIONID = 186a8
@@ -135,7 +135,7 @@ SECURITYSESSIONID = 186a8
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
-# makefile (from `Makefile', line 19)
+# makefile (from `Makefile', line 20)
 FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 # default
 .INCLUDE_DIRS = /usr/local/include
@@ -154,9 +154,9 @@ VSCODE_PID = 81581
 
 # Directories
 
-# . (device 16777227, inode 661095): 24 files, no impossibilities.
+# . (device 16777227, inode 661095): 36 files, no impossibilities.
 
-# 24 files, no impossibilities in 1 directories.
+# 36 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -173,19 +173,50 @@ get_real_args.c:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-reverse_rotate.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+sort_algo.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := sort_algo.o
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
+ 
+# automatic
+# | := 
+# automatic
+# < := push_swap.c
+# automatic
+# ^ := push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
+# automatic
+# ? := push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
+#  commands to execute (from `Makefile', line 29):
 	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 	
 
-stack_init.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+reverse_rotate.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
+#  Last modified 2023-05-02 16:37:04
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 29):
+	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
+	
+
+stack_init.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
+#  Implicit rule search has not been done.
+#  Last modified 2023-05-02 16:37:04
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 29):
 	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 	
 
@@ -196,7 +227,6 @@ all,:
 #  File has not been updated.
 
 # Not a target:
- 
 push_swap.c:
 #  Implicit rule search has been done.
 #  Last modified 2023-05-02 14:40:36
@@ -205,11 +235,12 @@ push_swap.c:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-is_sorted.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+is_sorted.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
+#  Last modified 2023-05-02 16:37:04
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 29):
 	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 	
 
@@ -225,7 +256,7 @@ all: push_swap
 # Not a target:
 utils.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-05-02 15:26:05
+#  Last modified 2023-05-02 16:36:27
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -236,28 +267,30 @@ utils.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-check_argv.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+check_argv.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
+#  Last modified 2023-05-02 16:37:04
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 29):
 	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 	
 
 # Not a target:
 swap.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-05-02 15:09:19
+#  Last modified 2023-05-02 16:16:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-rotate.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+rotate.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
+#  Last modified 2023-05-02 16:37:04
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 29):
 	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 	
 
@@ -267,26 +300,37 @@ rotate.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c
 #  Modification time never checked.
 #  File has not been updated.
 
-push.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+push.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
+#  Last modified 2023-05-02 16:37:04
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 29):
 	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 	
 
-small_sort.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+small_sort.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
+#  Last modified 2023-05-02 16:37:04
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 29):
 	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 	
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-05-02 15:27:24
+#  Last modified 2023-05-02 16:36:58
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+sort_algo.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-05-02 16:36:47
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -304,17 +348,18 @@ reverse_rotate.c:
 # Not a target:
 stack_init.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-05-02 15:27:06
+#  Last modified 2023-05-02 15:31:34
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-error.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+error.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
+#  Last modified 2023-05-02 16:37:04
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 29):
 	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 	
 
@@ -337,7 +382,7 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 35):
+#  commands to execute (from `Makefile', line 36):
 	rm -rf $(NAME)
 	rm -rf libft/libft.a
 	
@@ -390,16 +435,18 @@ small_sort.c:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-get_real_args.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+get_real_args.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
+#  Last modified 2023-05-02 16:37:04
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 29):
 	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 	
 
 re: fclean clean all
 #  Phony target (prerequisite of .PHONY).
+ 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -408,47 +455,30 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 31):
+#  commands to execute (from `Makefile', line 32):
 	rm -rf $(OBJS)
 	make -C libft clean
 	
 
-push_swap.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+push_swap.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: `'
-#  File does not exist.
+#  Last modified 2023-05-02 16:37:04
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := push_swap.o
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
-# automatic
-# | := 
-# automatic
-# < := push_swap.c
-# automatic
-# ^ := push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
-# automatic
-# ? := push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
-#  commands to execute (from `Makefile', line 28):
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 29):
 	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 	
 
-push_swap: push_swap.o get_real_args.o error.o check_argv.o stack_init.o rotate.o push.o reverse_rotate.o swap.o small_sort.o is_sorted.o utils.o
+push_swap: push_swap.o get_real_args.o error.o check_argv.o stack_init.o rotate.o push.o reverse_rotate.o swap.o small_sort.o is_sorted.o utils.o sort_algo.o
 #  Implicit rule search has not been done.
-#  Last modified 2023-05-02 15:27:33
+#  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/5=0%
-#  commands to execute (from `Makefile', line 24):
+#  commands to execute (from `Makefile', line 25):
 	make -C libft all
 	cc $(FLAGS) $(OBJS) -o $(NAME) libft/libft.a
 	
@@ -458,29 +488,30 @@ error.c:
 #  Implicit rule search has been done.
 #  Last modified 2023-04-17 14:23:14
 #  File has been updated.
- 
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-utils.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+utils.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
+#  Last modified 2023-05-02 16:37:04
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 29):
 	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 	
 
-swap.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
+swap.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c sort_algo.c
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 28):
+#  Last modified 2023-05-02 16:37:04
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 29):
 	cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 	
 
 # files hash-table stats:
-# Load=36/1024=4%, Rehash=0, Collisions=0/215=0%
+# Load=38/1024=4%, Rehash=0, Collisions=1/243=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -492,6 +523,6 @@ swap.o: push_swap.c get_real_args.c error.c check_argv.c stack_init.c rotate.c p
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue May  2 15:27:47 2023
+# Finished Make data base on Tue May  2 16:37:12 2023
 
  

@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 13:17:56 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/02 15:09:19 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/02 16:16:36 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void	ss(t_ps *ps)
 	ft_putstr_fd("ss\n", 2);
 }
 
-void	ft_swap(int a, int b)
+void	ft_swap(int *a, int *b)
 {
-	int	temp;
+	int	*temp;
 
 	temp = a;
 	a = b;
