@@ -6,12 +6,13 @@
 #    By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 11:43:16 by yoonslee          #+#    #+#              #
-#    Updated: 2023/03/09 12:40:58 by yoonslee         ###   ########.fr        #
+#    Updated: 2023/05/02 15:27:24 by yoonslee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= push_swap
-SRCS= small_element.c 
+SRCS= push_swap.c get_real_args.c error.c check_argv.c stack_init.c\
+		rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c
 OBJS= $(SRCS:.c=.o)
 
 HEADER = push_swap.h
@@ -21,10 +22,10 @@ all:$(NAME)
 
 $(NAME):$(OBJS)
 		make -C libft all
-		cc $(FLAGS) $(OBJS) libft/libft.a -o $(NAME)
+		cc $(FLAGS) $(OBJS) -o $(NAME) libft/libft.a
 
 $(OBJS):$(SRCS)
-		cc -c $(FLAGS) $(SRCS)
+		cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 
 clean:
 		rm -rf $(OBJS)

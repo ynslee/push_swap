@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_init.c                                       :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 09:35:26 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/02 15:31:34 by yoonslee         ###   ########.fr       */
+/*   Created: 2023/05/02 10:01:34 by yoonslee          #+#    #+#             */
+/*   Updated: 2023/05/02 13:16:39 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	init_stack(t_ps	*ps)
+int	sorted_orderly(int *array, int len)
 {
-	ps->len = ps->real_argc + 1;
-	if (ps->real_argc <= 1)
-		exit(0);
-	ps->stack_a = malloc(sizeof(int) * ps->len);
-	ps->stack_b = malloc(sizeof(int) * ps->len);
-	ps->array = malloc(sizeof(int) * ps->len);
-	if (!ps->stack_a || !ps->stack_b || !ps->array)
+	int	i;
+
+	i = 0;
+	while (i < len - 1)
 	{
-		msg_error("malloc error", 1);
-		exit(0);
+		if (array[i] > array[i + 1])
+			return (0);
+		i++;
 	}
-	ps->number_amount = 0;
-	ps->len_a = ps->real_argc;
-	ps->len_b = 0;
-	ps->medium = 0;
+	return (1);
+}
+
+int	sorted_reverse(int *array, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len - 1)
+	{
+		if (array[i] < array[i + 1])
+			return (0);
+		i++;
+	}
 	return (1);
 }

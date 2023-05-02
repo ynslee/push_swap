@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:14:14 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/04/17 17:42:53 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/02 09:52:20 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	rra(t_ps *ps)
 	// 	ft_printf("now stack a[%d] is %d\n", i, ps->stack_a[i]);
 	// 	i++;
 	// }
-	ft_printf("rra\n");
+	ft_putstr_fd("rra\n", 2);
 }
 
 void	rrb(t_ps *ps)
@@ -53,7 +53,7 @@ void	rrb(t_ps *ps)
 	}
 	ps->stack_b[0] = temp;
 	ps->number_amount++;
-	ft_printf("rrb\n");
+	ft_putstr_fd("rrb\n", 2);
 }
 
 void	rrr(t_ps *ps)
@@ -63,5 +63,5 @@ void	rrr(t_ps *ps)
 	rra(ps);
 	rrb(ps);
 	ps->number_amount++;
-	ft_printf("rrr\n");
+	ft_putstr_fd("rrr\n", 2);
 }

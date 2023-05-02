@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 13:17:56 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/04/17 17:13:05 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:09:19 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sa(t_ps *ps)
 	ps->stack_a[0] = ps->stack_a[1];
 	ps->stack_a[1] = temp;
 	ps->number_amount++;
-	ft_printf("sa\n");
+	ft_putstr_fd("sa\n", 2);
 }
 
 void	sb(t_ps *ps)
@@ -35,7 +35,7 @@ void	sb(t_ps *ps)
 	ps->stack_b[0] = ps->stack_b[1];
 	ps->stack_b[1] = temp;
 	ps->number_amount++;
-	ft_printf("sb\n");
+	ft_putstr_fd("sb\n", 2);
 }
 
 void	ss(t_ps *ps)
@@ -45,5 +45,14 @@ void	ss(t_ps *ps)
 	sa(ps);
 	sb(ps);
 	ps->number_amount++;
-	ft_printf("ss\n");
+	ft_putstr_fd("ss\n", 2);
+}
+
+void	ft_swap(int a, int b)
+{
+	int	temp;
+
+	temp = a;
+	a = b;
+	b = temp;
 }

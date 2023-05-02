@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 11:39:33 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/04/17 17:27:31 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:09:24 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_ps
 	int		len_a;
 	int		len_b;
 	int		number_amount;
+	int		medium;
 }			t_ps;
 
 
@@ -56,6 +57,25 @@ int			init_stack(t_ps	*ps);
 /*error management*/
 void		ft_error(void);
 void		msg_error(char *msg, int error_code);
+
+/*check if arg is sorted*/
+int			sorted_orderly(int *array, int len);
+int			sorted_reverse(int *array, int len);
+
+/*small element*/
+void		small_sort(t_ps *ps);
+void		two_element(t_ps *ps);
+void		three_element(t_ps *ps);
+void		three_element_extra(t_ps *ps);
+void		four_element(t_ps *ps);
+void		five_element(t_ps *ps);
+
+/*utilities for sorting algorithm*/
+void		sort_init(t_ps *ps);
+void		sort_algo(t_ps *ps);
+int			find_min(t_ps *ps);
+int			find_medium(t_ps *ps, int i);
+void		ft_swap(int a, int b);
 
 /*allowed functions only*/
 void		sa(t_ps *ps);
