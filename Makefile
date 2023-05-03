@@ -6,14 +6,14 @@
 #    By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 11:43:16 by yoonslee          #+#    #+#              #
-#    Updated: 2023/05/02 16:36:58 by yoonslee         ###   ########.fr        #
+#    Updated: 2023/05/03 14:23:55 by yoonslee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= push_swap
 SRCS= push_swap.c get_real_args.c error.c check_argv.c stack_init.c\
 		rotate.c push.c reverse_rotate.c swap.c small_sort.c is_sorted.c utils.c\
-		sort_algo.c
+		sort_algo.c sort_algo_continue.c
 OBJS= $(SRCS:.c=.o)
 
 HEADER = push_swap.h

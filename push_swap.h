@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 11:39:33 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/02 16:39:01 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/03 14:22:25 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ typedef struct s_ps
 	int		len_a;
 	int		len_b;
 	int		number_amount;
-	int		medium;
+	int		median;
+	int		len_array;
+	int		count;
 }			t_ps;
 
 
@@ -72,10 +74,11 @@ void		five_element(t_ps *ps);
 
 /*utilities for sorting algorithm*/
 void		sort_init(t_ps *ps);
-void		sort_algo(t_ps *ps);
+void		sort_to_b(t_ps *ps);
 int			find_min(t_ps *ps);
-int			find_median(t_ps *ps);
-int			find_median2(t_ps *ps);
+void		find_median(t_ps *ps);
+void		track_chunks(t_ps *ps);
+// int			find_median2(t_ps *ps);
 void		ft_swap(int *a, int *b);
 
 /*allowed functions only*/
@@ -90,5 +93,8 @@ void		rr(t_ps *ps);
 void		rra(t_ps *ps);
 void		rrb(t_ps *ps);
 void		rrr(t_ps *ps);
+
+/*function to delete later*/
+void		print_stacks(t_ps *ps);
 
 #endif

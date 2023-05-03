@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:36:09 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/02 16:36:27 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/03 14:24:59 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,34 @@ void	five_element(t_ps *ps)
 	return ;
 }
 
-void	sort_init(t_ps *ps)
+void	print_stacks(t_ps *ps)
 {
-	if (ps->len_a <= 5)
-		small_sort(ps);
-	// // if (sorted_reverse(ps->stack_a, ps->len_a) == 1)
-	// // 	sort_reversesort(ps);
-	else
-		sort_algo(ps);
-	return ;
+	int	i;
+
+	i = 0;
+	ft_printf("stack a length is %d\n", ps->len_a);
+	ft_printf("stack a is ");
+	while (i < ps->len_a)
+	{
+		ft_printf("%d ", ps->stack_a[i]);
+		i++;
+	}
+	ft_printf("\n");
+	ft_printf("stack b length is %d\n", ps->len_b);
+	i = 0;
+	ft_printf("stack b is ");
+	while (i < ps->len_b)
+	{
+		ft_printf("%d ", ps->stack_b[i]);
+		i++;
+	}
+	ft_printf("\n");
+	i = 0;
+	ft_printf("array is ");
+	while (i < ps->len_array)
+	{
+		ft_printf("%d ", ps->array[i]);
+		i++;
+	}
+	ft_printf("\n");
 }
-
-
