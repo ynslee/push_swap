@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 11:39:33 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/03 14:22:25 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:09:06 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ typedef struct s_ps
 	int		real_argc;
 	char	**real_argv;
 	int		*array;
-	int		*stack_a;
-	int		*stack_b;
+	int		*a;
+	int		*b;
 	int		len;
 	int		len_a;
 	int		len_b;
@@ -62,7 +62,7 @@ void		msg_error(char *msg, int error_code);
 
 /*check if arg is sorted*/
 int			sorted_orderly(int *array, int len);
-int			sorted_reverse(int *array, int len);
+int			sorted_reverse(int *stack, int len);
 
 /*small element*/
 void		small_sort(t_ps *ps);
@@ -80,6 +80,12 @@ void		find_median(t_ps *ps);
 void		track_chunks(t_ps *ps);
 // int			find_median2(t_ps *ps);
 void		ft_swap(int *a, int *b);
+void		check_rotate(t_ps *ps);
+void		sort_continue(t_ps *ps);
+void		top_sort_b(t_ps *ps);
+void		top_sort_b2(t_ps *ps);
+void		update_array(t_ps *ps);
+
 
 /*allowed functions only*/
 void		sa(t_ps *ps);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:44:32 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/02/22 19:53:35 by yoonseonlee      ###   ########.fr       */
+/*   Updated: 2023/05/04 13:08:25 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ char	*read_line_bonus(char *stash, int fd)
 	int		byte_read;
 	char	*buf;
 
-	buf = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	buf = ft_calloc(bUFFER_SIZE + 1, sizeof(char));
 	if (!buf)
 		return (NULL);
 	byte_read = 1;
 	while (!ft_strchr(stash, '\n') && byte_read != 0)
 	{
-		byte_read = read(fd, buf, BUFFER_SIZE);
+		byte_read = read(fd, buf, bUFFER_SIZE);
 		if (byte_read == -1)
 		{
 			free(buf);
@@ -93,7 +93,7 @@ char	*get_next_line_bonus(int fd)
 	static char	*stash[4096];
 	char		*out;
 
-	if (fd < 0 || BUFFER_SIZE < 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || bUFFER_SIZE < 0 || read(fd, 0, 0) < 0)
 		return (NULL);
 	if (!stash[fd])
 	{

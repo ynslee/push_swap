@@ -6,54 +6,72 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:23:43 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/03 15:49:42 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:46:28 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*sort the small chunk in a and push back small chunk from b to a*/
 void	sort_continue(t_ps *ps)
 {
+	int	temp;
+
 	if (ps->len_a <= 3)
 		small_sort(ps);
 	while (ps->array[0] != 0)
 	{
 		ps->count = ps->array[0];
+		temp = ps->count;
+		if (sorted_reverse(ps->b, temp) == 1)
+		{
+			while (temp-- >= 0)
+				pa(ps);
+			return ;
+		}
 		update_array(ps);
-		top_small_sort(ps);
+		if (ps->count <= 3)
+			top_sort_b(ps);
+		else if (ps->count > 4)
+			divide_to_a(ps);
 	}
-// 	if (ps->array[i] <= 2)
-// 		// while
-		
 }
 
 /*if the chunk is small or less than 3, you continue into sorting.
 if chunk is bigger, you cut it and send it back to a*/
-void	top_small_sort(t_ps *ps)
+void	top_sort_b(t_ps *ps)
 {
-	int	i;
-
-	i = -1;
 	if (ps->count == 2)
 	{
-		if (ps->stack_a[0] > ps->stack_a[1])
-			sa(ps);
+		if (ps->b[0] < ps->b[1])
+			sb(ps);
 	}
-	if (ps->count == 3)
+	if (ps->count == 3 && ps->b[0] > ps->b[1] && ps->b[0] > ps->b[2])
 	{
 		pa(ps);
-		pa(ps);
-		pa(ps);	
-		if (ps->stack_a[0] < ps->stack_a[2] && ps->stack_a[2] < ps->stack_a[1])
-		{
-			ra(ps);
-			sa(ps);
-			rra(ps);
-			return (0);
-		}
+		sb(ps);
 	}
-	while (++i < ps->count)
+	if (ps->count == 3 && ps->b[2] > ps->b[1] && ps->b[2] > ps->b[0])
+	{
+		if (ps->b[0] < ps->b[1])
+			sb(ps);
+		rb(ps);
+		sb(ps);
 		pa(ps);
+		rrb(ps);
+	}
+	if (ps->count == 3 && ps->b[1] > ps->b[0] && ps->b[1] > ps->b[2])
+		top_sort_b2(ps);
+	pa(ps);
+	pa(ps);
+}
+
+void	top_sort_b2(t_ps *ps)
+{
+	sb(ps);
+	pa(ps);
+	if (ps->b[0] < ps->b[1])
+		sb(ps);
 }
 
 void	update_array(t_ps *ps)
@@ -61,9 +79,9 @@ void	update_array(t_ps *ps)
 	int	i;
 
 	i = 0;
-	while (ps->stack_a[i] != 0)
+	while (ps->array[i] != 0)
 	{
-		ps->stack_a[i] = ps->stack_a[i + 1];
+		ps->array[i] = ps->array[i + 1];
 		i++;
 	}
 }

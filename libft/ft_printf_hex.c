@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:40:14 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/02/22 19:59:54 by yoonseonlee      ###   ########.fr       */
+/*   Updated: 2023/05/04 13:08:25 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_printhex_big(unsigned int n)
 		count += ft_printhex_big(n / 16);
 	n = n % 16;
 	if (n > 9 && n <= 15)
-		temp = n - 10 + 'A';
+		temp = n - 10 + 'a';
 	if (n >= 0 && n <= 9)
 		temp = n + '0';
 	ft_printchr(temp);

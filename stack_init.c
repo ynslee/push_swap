@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:35:26 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/03 14:12:45 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/04 13:08:25 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	init_stack(t_ps	*ps)
 	ps->len = ps->real_argc + 1;
 	if (ps->real_argc <= 1)
 		exit(0);
-	ps->stack_a = malloc(sizeof(int) * ps->len);
-	ps->stack_b = malloc(sizeof(int) * ps->len);
+	ps->a = malloc(sizeof(int) * ps->len);
+	ps->b = malloc(sizeof(int) * ps->len);
 	ps->array = malloc(sizeof(int) * ps->len);
-	if (!ps->stack_a || !ps->stack_b || !ps->array)
+	if (!ps->a || !ps->b || !ps->array)
 	{
 		msg_error("malloc error", 1);
 		exit(0);

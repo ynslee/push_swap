@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 13:17:56 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/02 16:16:36 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/04 13:08:25 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	sa(t_ps *ps)
 
 	if (ps->len_a < 2)
 		return ;
-	temp = ps->stack_a[0];
-	ps->stack_a[0] = ps->stack_a[1];
-	ps->stack_a[1] = temp;
+	temp = ps->a[0];
+	ps->a[0] = ps->a[1];
+	ps->a[1] = temp;
 	ps->number_amount++;
 	ft_putstr_fd("sa\n", 2);
 }
@@ -31,9 +31,9 @@ void	sb(t_ps *ps)
 
 	if (ps->len_b < 2)
 		return ;
-	temp = ps->stack_b[0];
-	ps->stack_b[0] = ps->stack_b[1];
-	ps->stack_b[1] = temp;
+	temp = ps->b[0];
+	ps->b[0] = ps->b[1];
+	ps->b[1] = temp;
 	ps->number_amount++;
 	ft_putstr_fd("sb\n", 2);
 }

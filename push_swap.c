@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:11:53 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/03 12:57:34 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:42:10 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /*
 1. no integer parameters - "Error\n"
 2. duplicate parameteres - "Erro\n"
-3. Greater than MAXINT && smaller than MININT- "Error\n"
+3. Greater than MaXINT && smaller than MININT- "Error\n"
 4. without any parameters, display nothing and give the prompt back.
 6. Run checker with valid parameters, and write an action with
 one or several spaces before and/or after the action during
@@ -42,8 +42,6 @@ int	main(int argc, char **argv)
 		exit(0);
 	check_real_argv(&ps);
 	ft_printf("argv check done\n");
-	if (sorted_orderly(ps.stack_a, ps.len_a) == 1)
-		exit(0);
 	sort_init(&ps);
 
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:41:20 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/02 12:49:46 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/04 13:08:25 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,42 @@
 
 void	two_element(t_ps *ps)
 {
-	if (ps->stack_a[0] > ps->stack_a[1])
+	if (ps->a[0] > ps->a[1])
 		sa(ps);
 	return ;
 }
 
 void	three_element(t_ps *ps)
 {
-	if (ps->stack_a[0] < ps->stack_a[2] && ps->stack_a[2] < ps->stack_a[1])
+	if (ps->a[0] < ps->a[2] && ps->a[2] < ps->a[1])
 	{
 		sa(ps);
 		ra(ps);
 		return ;
 	}
-	if (ps->stack_a[1] < ps->stack_a[0] && ps->stack_a[0] < ps->stack_a[2])
+	if (ps->a[1] < ps->a[0] && ps->a[0] < ps->a[2])
 	{
 		sa(ps);
 		return ;
 	}
-	if (ps->stack_a[2] < ps->stack_a[0] && ps->stack_a[0] < ps->stack_a[1])
+	if (ps->a[2] < ps->a[0] && ps->a[0] < ps->a[1])
 	{
 		rra(ps);
 		return ;
 	}
-	if (ps->stack_a[1] < ps->stack_a[2] && ps->stack_a[2] < ps->stack_a[0])
+	if (ps->a[1] < ps->a[2] && ps->a[2] < ps->a[0])
 	{
 		ra(ps);
 		return ;
 	}
-	if (ps->stack_a[2] < ps->stack_a[1] && ps->stack_a[1] < ps->stack_a[0])
+	if (ps->a[2] < ps->a[1] && ps->a[1] < ps->a[0])
 		three_element_extra(ps);
 	return ;
 }
 
 void	three_element_extra(t_ps *ps)
 {
-	if (ps->stack_a[2] < ps->stack_a[1] && ps->stack_a[1] < ps->stack_a[0])
+	if (ps->a[2] < ps->a[1] && ps->a[1] < ps->a[0])
 	{
 		sa(ps);
 		rra(ps);

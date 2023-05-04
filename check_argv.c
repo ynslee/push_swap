@@ -6,14 +6,14 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:25:54 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/04/17 14:21:31 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/04 13:08:25 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 1. no integer parameters - "Error\n"
 2. duplicate parameteres - "Error\n"
-3. Greater than MAXINT && smaller than MININT- "Error\n"
+3. Greater than MaXINT && smaller than MININT- "Error\n"
 4. without any parameters, display nothing and give the prompt back.
 6. Run checker with valid parameters, and write an action with
 one or several spaces before and/or after the action during
@@ -61,7 +61,7 @@ void	arg_is_number(int i, int j, t_ps *ps)
 		}
 		if ((neg * res) > 2147483647 || (neg * res) < -2147483648)
 			ft_error();
-		ps->stack_a[i] = neg * res;
+		ps->a[i] = neg * res;
 		i++;
 	}
 }

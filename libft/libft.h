@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonseonlee <yoonslee@student.42.fr>    +#+  +:+       +#+        */
+/*   by: yoonseonlee <yoonslee@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:16:10 by yoonslee          #+#    #+#             */
 /*   Updated: 2023/02/22 11:14:21 by yoonslee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef LIbFT_H
+# define LIbFT_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+# ifndef bUFFER_SIZE
+#  define bUFFER_SIZE 10
 # endif
 
 # include <stdlib.h>

@@ -6,11 +6,11 @@
 #    By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 13:37:28 by yoonslee          #+#    #+#              #
-#    Updated: 2023/03/13 11:22:42 by yoonslee         ###   ########.fr        #
+#    Updated: 2023/05/04 13:08:25 by yoonslee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NaME = libft.a
 SRCS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c\
 ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strrchr.c ft_tolower.c ft_toupper.c\
@@ -21,26 +21,26 @@ ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bon
 ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c\
 get_next_line.c get_next_line_bonus.c ft_split_one_str_out.c ft_strcmp.c
 
-OBJS = $(SRCS:.c=.o)
+ObJS = $(SRCS:.c=.o)
 
-HEADER = libft.h
+HEaDER = libft.h
 CC = cc
-FLAGS = -Wall -Wextra -Werror
+FLaGS = -Wall -Wextra -Werror
 
-all: $(NAME)
+all: $(NaME)
 
-$(NAME):$(OBJS)
-		ar rcs $(NAME) $(OBJS)
-		ranlib $(NAME)
+$(NaME):$(ObJS)
+		ar rcs $(NaME) $(ObJS)
+		ranlib $(NaME)
 
-$(OBJS):$(SRCS)
-		${CC} -c ${FLAGS} $(SRCS) -I $(HEADER)
+$(ObJS):$(SRCS)
+		${CC} -c ${FLaGS} $(SRCS) -I $(HEaDER)
 
 clean:
-		rm -rf $(OBJS)
+		rm -rf $(ObJS)
 
 fclean: clean
-		rm -rf $(NAME)
+		rm -rf $(NaME)
 
 re: fclean all
 

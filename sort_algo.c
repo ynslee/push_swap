@@ -6,50 +6,54 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:36:08 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/03 14:29:06 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/04 15:13:53 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*check if stack A is sorted already. If not, continue to sort*/
 void	sort_init(t_ps *ps)
 {
+	if (sorted_orderly(ps->a, ps->len_a) == 1)
+		exit(0);
 	if (ps->len_a <= 5)
 		small_sort(ps);
-	// // if (sorted_reverse(ps->stack_a, ps->len_a) == 1)
-	// // 	sort_reversesort(ps);
+	if (sorted_reverse(ps->a, ps->len_a) == 1)
+		// sort_reversesort(ps);
 	else
 		sort_to_b(ps);
 	return ;
 }
 
-/*find the median and push it to stack B*/
+/*find the median and push it to stack b*/
 void	sort_to_b(t_ps *ps)
 {
 	int	i;
-	int	temp;
 	int	length;
 
 	i = 0;
-	temp = 0;
 	ps->count = 0;
 	find_median(ps);
 	length = ps->len_a;
 	while (i < length)
 	{
-		if (ps->stack_a[0] <= ps->median)
+		if (ps->a[0] <= ps->median)
 		{
 			pb(ps);
 			ps->count++;
 		}
 		else
-			ra(ps);
+			check_rotate(ps);
 		i++;
 	}
 	track_chunks(ps);
 	print_stacks(ps);
 	if (ps->len_a > 3)
 		sort_to_b(ps);
+	if (ps->array[0] == 0)
+		return ;
+	sort_continue(ps);
 }
 
 void	find_median(t_ps *ps)
@@ -69,12 +73,12 @@ void	find_median(t_ps *ps)
 		count = 0;
 		while (j < ps->len_a)
 		{
-			if (ps->stack_a[i] < ps->stack_a[j])
+			if (ps->a[i] < ps->a[j])
 				count++;
 			j++;
 		}
 		if (half == count)
-			ps->median = ps->stack_a[i];
+			ps->median = ps->a[i];
 		i++;
 	}
 }
