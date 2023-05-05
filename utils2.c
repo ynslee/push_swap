@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:03 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/05 11:50:55 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/05 12:54:57 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ void	divide_to_a(t_ps *ps, int length)
 {
 	int	i;
 	int	count;
+	int	a_before;
 
 	i = -1;
 	ps->count = 0;
+	a_before = ps->len_a;
 	find_median_b(ps, length);
 	update_array(ps);
 	while (++i < length)
@@ -36,27 +38,27 @@ void	divide_to_a(t_ps *ps, int length)
 	print_stacks(ps);
 	if (ps->count > 3)
 		divide_to_a(ps, ps->count);
-	divide_to_b(ps, length - ps->count);
+	divide_to_b(ps, a_before - ps->len_a);
 }
 
 void	divide_to_b(t_ps *ps, int length)
 {
 	int	i;
-	int	median;
-	int	b_init_size;
+	int	count;
+	int	b_before;
 
 	i = -1;
-	b_init_size = ps->len_b;
+	b_before = ps->len_b;
 	if (is_sorted(ps->a, ps->len_a) == 1)
 		return ;
-	if (range <= 3)
-		return (sort_top_a(ps, range));
-	median = find_median(ps->a, range);
-	while (ps->len_b - b_init_size < range / 2)
+	if (count <= 3)
+		return (sort_top_a(ps, count));
+	find_median(ps->a);
+	while (ps->len_b - b_before < count / 2)
 	{
-		if (ps->a[0] < median)
+		if (ps->a[0] < ps->median)
 			pb(ps);
-		else if (ps->a[0] == median && range % 2 == 0)
+		else if (ps->a[0] == ps->median && count % 2 == 0)
 			pb(ps);
 		else if (ps->a[0] >= median && ++i)
 			ra(ps);
@@ -65,9 +67,13 @@ void	divide_to_b(t_ps *ps, int length)
 		rra(ps);
 	if (ps->len_b - b_init_size > 0 && ++ps->lvl)
 		add_one_num_front(ps, ps->len_b - b_init_size);
-	divide_a_to_b(ps, ps->len - b_init_size - ps->len_a + range % 2);
+	divide_a_to_b(ps, ps->len - b_init_size - ps->len_a + count % 2);
 }
 
+void	top_sort_a(t_ps *ps)
+{
+	
+}
 
 void	find_median_b(t_ps *ps, int len)
 {
