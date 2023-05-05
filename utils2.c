@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:03 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/05 14:36:20 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/05 14:43:03 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	divide_to_b(t_ps *ps, int length)
 	if (length <= 3)
 		return (top_sort_a(ps, length));
 	find_median(ps->a);
-	// while (ps->len_b - b_before < length / 2)
-	// {
+	while (++i < length)
+	{
 	// 	if (ps->a[0] < ps->median)
 	// 		pb(ps);
 	// 	else if (ps->a[0] == ps->median && length % 2 == 0)
@@ -68,7 +68,7 @@ void	divide_to_b(t_ps *ps, int length)
 	// if (ps->len_b - b_before > 0 && ++ps->lvl)
 	// 	add_one_num_front(ps, ps->len_b - b_init_size);
 	// divide_to_b(ps, ps->len - b_before- ps->len_a + count % 2);
-}
+	}
 
 void	top_sort_a(t_ps *ps, int length)
 {
