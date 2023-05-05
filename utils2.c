@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:03 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/05 14:45:43 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/05 15:09:57 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,31 +44,39 @@ void	divide_to_a(t_ps *ps, int length)
 void	divide_to_b(t_ps *ps, int length)
 {
 	int	i;
-	int	count;
-	int	b_before;
+	int	leftover;
 
-	i = -1;
-	b_before = ps->len_b;
+	i = 0;
+	ps->count = 0;
+	leftover = length;
 	if (is_sorted(ps->a, ps->len_a) == 1)
 		return ;
 	if (length <= 3)
 		return (top_sort_a(ps, length));
 	find_median(ps->a);
-	while (++i < length)
+	while (length-- > 0)
 	{
-		if (ps->a[0] < ps->median)
+		if (ps->a[0] <= ps->median)
+		{
 			pb(ps);
-	// 	else if (ps->a[0] == ps->median && length % 2 == 0)
-	// 		pb(ps);
-	// 	else if (ps->a[0] >= ps->median && ++i)
-	// 		ra(ps);
-	// }
-	// while (i-- > 0)
-	// 	rra(ps);
-	// if (ps->len_b - b_before > 0 && ++ps->lvl)
-	// 	add_one_num_front(ps, ps->len_b - b_init_size);
-	// divide_to_b(ps, ps->len - b_before- ps->len_a + count % 2);
+			ps->count++;
+		}
+		else
+		{
+			ra(ps);
+			i++;
+		}
 	}
+	divide_to_b2(ps, i, leftover);
+}
+
+void	divide_to_b2(t_ps *ps, int i, int leftover)
+{
+	while (i-- > 0)
+		rra(ps);
+	track_chunks(ps);
+	if ((leftover - ps->count) > 3)
+		divide_to_b(ps, leftover - ps->count);
 }
 
 void	top_sort_a(t_ps *ps, int length)
