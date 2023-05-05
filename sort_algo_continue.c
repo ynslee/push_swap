@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:23:43 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/04 14:46:28 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/05 11:33:38 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	sort_continue(t_ps *ps)
 		if (ps->count <= 3)
 			top_sort_b(ps);
 		else if (ps->count > 4)
-			divide_to_a(ps);
+			divide_to_a(ps, ps->array[0]);
 	}
 }
 
@@ -66,7 +66,7 @@ void	top_sort_b(t_ps *ps)
 	pa(ps);
 }
 
-void	top_sort_b2(t_ps *ps)
+void	top_sort_b2(t_ps *ps)-
 {
 	sb(ps);
 	pa(ps);
