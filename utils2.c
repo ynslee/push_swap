@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:03 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/05 15:22:21 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/05 15:23:28 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void	divide_to_b(t_ps *ps, int length, int i)
 void	divide_to_b2(t_ps *ps, int i, int leftover)
 {
 	int	length;
-	int	i;
 
 	length = leftover;
 	while (length-- > 0)
