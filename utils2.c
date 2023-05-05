@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:03 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/05 15:18:21 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/05 15:22:21 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	divide_to_b(t_ps *ps, int length, int i)
 	i = 0;
 	ps->count = 0;
 	leftover = length;
-	if (is_sorted(ps->a, ps->len_a) == 1)
+	if (sorted_orderly(ps->a, ps->len_a) == 1)
 		return ;
 	if (length <= 3)
 	{
