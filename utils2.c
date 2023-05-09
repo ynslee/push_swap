@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:03 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/09 12:53:52 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/09 14:40:28 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	divide_to_a(t_ps *ps, int length)
 	ps->count = 0;
 	a_before = ps->len_a;
 	find_median_b(ps, length);
+	ft_printf("median_b is %d\n", ps->median);
 	update_array(ps);
 	while (++i < length)
 	{
@@ -37,7 +38,6 @@ void	divide_to_a(t_ps *ps, int length)
 	if (ps->count <= 3)
 		top_sort_b(ps);
 	track_chunks(ps);
-	print_stacks(ps);
 	if (ps->count > 3)
 		divide_to_a(ps, ps->count);
 	divide_to_b(ps, a_before - ps->len_a, i);
@@ -139,33 +139,6 @@ void	find_median_a(t_ps *ps, int len)
 		}
 		if (half == count)
 			ps->median = ps->a[i];
-		i++;
-	}
-}
-
-void	find_median_b(t_ps *ps, int len)
-{
-	int	half;
-	int	i;
-	int	j;
-	int	count;
-
-	if (len <= 3)
-		exit(0);
-	half = len / 2;
-	i = 0;
-	while (i < len)
-	{
-		j = 0;
-		count = 1;
-		while (j < len)
-		{
-			if (ps->b[i] < ps->b[j])
-				count++;
-			j++;
-		}
-		if (half == count)
-			ps->median = ps->b[i];
 		i++;
 	}
 }

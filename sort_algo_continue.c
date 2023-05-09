@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:23:43 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/09 12:58:35 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/09 14:43:06 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ void	sort_continue(t_ps *ps)
 {
 	int	temp;
 
-	if (ps->len_a <= 3)
+	if (ps->len_a <= 5)
 		small_sort(ps);
 	print_stacks(ps);
 	while (ps->array[0] != 0)
 	{
 		ps->count = ps->array[0];
+		ft_printf("array[0] is %d\n", ps->count);
 		temp = ps->count;
 		if (sorted_reverse(ps->b, temp) == 1)
 		{
@@ -30,15 +31,14 @@ void	sort_continue(t_ps *ps)
 				pa(ps);
 			return ;
 		}
-		update_array(ps);
-		ft_printf("here4\n");
 		if (ps->count <= 3)
 			top_sort_b(ps);
-		if (ps->count > 4)
+		ft_printf("here5\n");
+		if (ps->count > 3)
 			divide_to_a(ps, ps->count);
+		update_array(ps);
 	}
-	ft_printf("here3\n");
-	print_stacks(ps);
+// 	print_stacks(ps);
 }
 
 /*if the chunk is small or less than 3, you continue into sorting.

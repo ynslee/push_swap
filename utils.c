@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:36:09 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/09 13:19:45 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/09 14:39:11 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	find_min(t_ps *ps)
 	temp = 0;
 	while (i < ps->len_a)
 	{
-		if (ps->a[temp] > ps->a[i])
-			temp = i;
+		if (ps->a[i] < ps->a[temp])
+				temp = i;
 		i++;
 	}
 	return (temp);
@@ -32,6 +32,8 @@ void	five_element(t_ps *ps)
 {
 	int	min;
 
+	if (sorted_orderly(ps->a, ps->len_a) == 1)
+		return ;
 	min = find_min(ps);
 	if (min == 1)
 		sa(ps);
@@ -112,4 +114,31 @@ void	print_stacks(t_ps *ps)
 		i++;
 	}
 	ft_printf("\n");
+}
+
+void	find_median_b(t_ps *ps, int len)
+{
+	int	half;
+	int	i;
+	int	j;
+	int	count;
+
+	if (len <= 3)
+		exit(0);
+	half = len / 2;
+	i = 0;
+	while (i < len)
+	{
+		j = 0;
+		count = 1;
+		while (j < len)
+		{
+			if (ps->b[i] < ps->b[j])
+				count++;
+			j++;
+		}
+		if (half == count)
+			ps->median = ps->b[i];
+		i++;
+	}
 }

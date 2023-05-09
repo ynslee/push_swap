@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 11:39:33 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/09 12:04:07 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/09 13:40:37 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int			sorted_reverse(int *stack, int len);
 void		small_sort(t_ps *ps);
 void		two_element(t_ps *ps);
 void		three_element(t_ps *ps);
-void		three_element_extra(t_ps *ps);
 void		four_element(t_ps *ps);
 void		five_element(t_ps *ps);
 

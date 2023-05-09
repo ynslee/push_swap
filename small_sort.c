@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:41:20 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/04 13:08:25 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/09 14:11:59 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,38 +21,25 @@ void	two_element(t_ps *ps)
 
 void	three_element(t_ps *ps)
 {
-	if (ps->a[0] < ps->a[2] && ps->a[2] < ps->a[1])
-	{
-		sa(ps);
-		ra(ps);
+	if (sorted_orderly(ps->a, ps->len_a) == 1)
 		return ;
-	}
-	if (ps->a[1] < ps->a[0] && ps->a[0] < ps->a[2])
+	if (ps->a[2] > ps->a[0] && ps->a[2] > ps->a[1])
 	{
 		sa(ps);
 		return ;
 	}
-	if (ps->a[2] < ps->a[0] && ps->a[0] < ps->a[1])
-	{
-		rra(ps);
-		return ;
-	}
-	if (ps->a[1] < ps->a[2] && ps->a[2] < ps->a[0])
+	if (ps->a[0] > ps->a[1] && ps->a[0] > ps->a[2])
 	{
 		ra(ps);
+		if (ps->a[0] > ps->a[1])
+			sa(ps);
 		return ;
 	}
-	if (ps->a[2] < ps->a[1] && ps->a[1] < ps->a[0])
-		three_element_extra(ps);
-	return ;
-}
-
-void	three_element_extra(t_ps *ps)
-{
-	if (ps->a[2] < ps->a[1] && ps->a[1] < ps->a[0])
+	if (ps->a[1] > ps->a[0] && ps->a[1] > ps->a[2])
 	{
-		sa(ps);
 		rra(ps);
+		if (ps->a[0] > ps->a[1])
+			sa(ps);
 		return ;
 	}
 }
@@ -61,6 +48,8 @@ void	four_element(t_ps *ps)
 {
 	int	min;
 
+	if (sorted_orderly(ps->a, ps->len_a) == 1)
+		return ;
 	min = find_min(ps);
 	if (min == 1)
 		sa(ps);
@@ -79,13 +68,15 @@ void	four_element(t_ps *ps)
 
 void	small_sort(t_ps *ps)
 {
-	if (ps->real_argc == 2)
+	if (sorted_orderly(ps->a, ps->len_a) == 1)
+		exit(0);
+	if (ps->len_a == 2)
 		two_element(ps);
-	if (ps->real_argc == 3)
+	if (ps->len_a == 3)
 		three_element(ps);
-	if (ps->real_argc == 4)
+	if (ps->len_a == 4)
 		four_element(ps);
-	if (ps->real_argc == 5)
+	if (ps->len_a == 5)
 		five_element(ps);
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:11:53 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/04 14:42:10 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/09 14:40:38 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int	main(int argc, char **argv)
 	if (init_stack(&ps) != 1)
 		exit(0);
 	check_real_argv(&ps);
-	ft_printf("argv check done\n");
 	sort_init(&ps);
 
 	return (0);
