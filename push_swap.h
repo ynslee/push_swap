@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 11:39:33 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/09 13:40:37 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/09 15:44:43 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void		sort_to_b(t_ps *ps);
 int			find_min(t_ps *ps);
 void		find_median(t_ps *ps);
 void		track_chunks(t_ps *ps);
-// int			find_median2(t_ps *ps);
+void		add_number_array(t_ps *ps, int num);
 void		ft_swap(int *a, int *b);
 void		check_rotate(t_ps *ps);
 void		sort_continue(t_ps *ps);
