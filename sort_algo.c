@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:36:08 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/05 15:20:35 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/09 13:19:43 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	sort_init(t_ps *ps)
 		exit(0);
 	if (ps->len_a <= 5)
 		small_sort(ps);
-	// if (sorted_reverse(ps->a, ps->len_a) == 1)
-	// 	// sort_reversesort(ps);
-	else
+	else if (ps->len_a > 5)
 		sort_to_b(ps);
+	print_stacks(ps);
+	// sort_continue(ps);
 	return ;
 }
 
@@ -35,10 +35,12 @@ void	sort_to_b(t_ps *ps)
 	i = 0;
 	ps->count = 0;
 	find_median(ps);
+	ft_printf("median is %d\n", ps->median);
 	length = ps->len_a;
+	ft_printf("length is %d\n", length);
 	while (i < length)
 	{
-		if (ps->a[0] <= ps->median)
+		if (ps->a[0] < ps->median)
 		{
 			pb(ps);
 			ps->count++;
@@ -48,12 +50,8 @@ void	sort_to_b(t_ps *ps)
 		i++;
 	}
 	track_chunks(ps);
-	print_stacks(ps);
-	if (ps->len_a > 3)
-		sort_to_b(ps);
-	if (ps->array[0] == 0)
-		return ;
-	sort_continue(ps);
+// 	if (ps->len_a > 3)
+// 		sort_to_b(ps);
 }
 
 void	find_median(t_ps *ps)
@@ -69,8 +67,8 @@ void	find_median(t_ps *ps)
 	i = 0;
 	while (i < ps->len_a)
 	{
-		j = 0;
-		count = 0;
+		j = i + 1;
+		count = 1;
 		while (j < ps->len_a)
 		{
 			if (ps->a[i] < ps->a[j])

@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:36:09 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/05 12:53:14 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/09 13:19:45 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,19 @@ void	check_rotate(t_ps *ps)
 	int	i;
 	int	temp;	
 
-	i = 0;
-	if (ps->a[0] > ps->median)
+	if (ps->a[0] >= ps->median)
 	{
+		i = 1;
 		while (i < ps->len_a)
 		{
-			if (ps->a[i] <= ps->median && i < (ps->len_a / 2))
+			if (ps->a[i] < ps->median && i <= (ps->len_a / 2))
 			{
 				temp = i;
 				while (temp-- > 0)
 					ra(ps);
 				return ;
 			}
-			else if (ps->a[i] <= ps->median && i > (ps->len_a / 2))
+			else if (ps->a[i] < ps->median && i > (ps->len_a / 2))
 			{
 				temp = i;
 				while (temp-- > 0)

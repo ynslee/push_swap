@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 11:39:33 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/05 15:20:13 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:04:07 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ void		divide_to_b(t_ps *ps, int length, int i);
 void		divide_to_b2(t_ps *ps, int i, int leftover);
 void		top_sort_a(t_ps *ps, int length);
 void		find_median_b(t_ps *ps, int len);
+void		find_median_a(t_ps *ps, int len);
 
 /*allowed functions only*/
 void		sa(t_ps *ps);
