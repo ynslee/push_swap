@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:29:45 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/09 15:56:33 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:29:00 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	pa(t_ps *ps)
 	ps->len_a++;
 	ps->len_b--;
 	ps->number_amount++;
-	ft_putstr_fd("pa\n", 2);
+	ft_printf("pa\n");
 }
 
 void	pb(t_ps *ps)
@@ -63,5 +63,5 @@ void	pb(t_ps *ps)
 	ps->len_a--;
 	ps->len_b++;
 	ps->number_amount++;
-	ft_putstr_fd("pb\n", 2);
+	ft_printf("pb\n", 2);
 }

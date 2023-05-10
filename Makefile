@@ -6,7 +6,7 @@
 #    By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 11:43:16 by yoonslee          #+#    #+#              #
-#    Updated: 2023/05/09 15:39:25 by yoonslee         ###   ########.fr        #
+#    Updated: 2023/05/10 15:12:46 by yoonslee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,10 @@ all:$(NAME)
 
 $(NAME):$(OBJS)
 		make -C libft all
-		cc $(FLAGS) $(OBJS) -o $(NAME) libft/libft.a
+		cc $(OBJS) -o $(NAME) libft/libft.a
 
 $(OBJS):$(SRCS)
-		cc -c $(FLAGS) $(SRCS) -I $(HEADER)
+		cc -c $(SRCS) -I $(HEADER)
 
 clean:
 		rm -rf $(OBJS)

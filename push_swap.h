@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 11:39:33 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/09 15:44:43 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:30:10 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,20 +76,20 @@ void		sort_init(t_ps *ps);
 void		sort_to_b(t_ps *ps);
 int			find_min(t_ps *ps);
 void		find_median(t_ps *ps);
-void		track_chunks(t_ps *ps);
-void		add_number_array(t_ps *ps, int num);
-void		ft_swap(int *a, int *b);
+void		add_to_chunks(t_ps *ps, int num);
+void		remove_from_chunks(t_ps	*ps);
 void		check_rotate(t_ps *ps);
 void		sort_continue(t_ps *ps);
 void		top_sort_b(t_ps *ps);
 void		top_sort_b2(t_ps *ps);
 void		update_array(t_ps *ps);
-void		divide_to_a(t_ps *ps, int length);
-void		divide_to_b(t_ps *ps, int length, int i);
-void		divide_to_b2(t_ps *ps, int i, int leftover);
+void		divide_b_to_a(t_ps *ps, int length, int a_before, int count);
+void		divide_a_to_b(t_ps *ps, int a_leftover);
+void		divide_a_to_b2(t_ps *ps, int i, int leftover);
 void		top_sort_a(t_ps *ps, int length);
 void		find_median_b(t_ps *ps, int len);
 void		find_median_a(t_ps *ps, int len);
+void		sort_reverse(t_ps *ps, int length);
 
 /*allowed functions only*/
 void		sa(t_ps *ps);
@@ -105,6 +105,8 @@ void		rrb(t_ps *ps);
 void		rrr(t_ps *ps);
 
 /*function to delete later*/
-void		print_stacks(t_ps *ps);
+void		print_stack_a(t_ps *ps);
+void		print_stack_b(t_ps *ps);
+void		print_array(t_ps *ps);
 
 #endif

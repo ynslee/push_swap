@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:36:08 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/09 15:53:11 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:58:23 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,13 @@ void	sort_init(t_ps *ps)
 	if (sorted_orderly(ps->a, ps->len_a) == 1)
 		exit(0);
 	if (ps->len_a <= 5)
+	{
 		small_sort(ps);
+		return ;
+	}
 	else if (ps->len_a > 5)
 		sort_to_b(ps);
+	small_sort(ps);
 	sort_continue(ps);
 	return ;
 }
@@ -34,9 +38,7 @@ void	sort_to_b(t_ps *ps)
 	i = 0;
 	ps->count = 0;
 	find_median(ps);
-	ft_printf("median is %d\n", ps->median);
 	length = ps->len_a;
-	ft_printf("length is %d\n", length);
 	while (i < length)
 	{
 		if (ps->a[0] < ps->median)
@@ -48,7 +50,7 @@ void	sort_to_b(t_ps *ps)
 			check_rotate(ps);
 		i++;
 	}
-	add_to_track(ps, ps->count);
+	add_to_chunks(ps, ps->count);
 	if (ps->len_a > 3)
 		sort_to_b(ps);
 }
@@ -70,7 +72,7 @@ void	find_median(t_ps *ps)
 		count = 1;
 		while (j < ps->len_a)
 		{
-			if (ps->a[i] < ps->a[j])
+			if (ps->a[i] < ps->a[j] && i != j)
 				count++;
 			j++;
 		}

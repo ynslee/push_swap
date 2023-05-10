@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:23:43 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/09 14:43:06 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:38:18 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,9 @@ void	sort_continue(t_ps *ps)
 {
 	int	temp;
 
-	if (ps->len_a <= 5)
-		small_sort(ps);
-	print_stacks(ps);
 	while (ps->array[0] != 0)
 	{
 		ps->count = ps->array[0];
-		ft_printf("array[0] is %d\n", ps->count);
 		temp = ps->count;
 		if (sorted_reverse(ps->b, temp) == 1)
 		{
@@ -31,20 +27,21 @@ void	sort_continue(t_ps *ps)
 				pa(ps);
 			return ;
 		}
-		if (ps->count <= 3)
+		else if (ps->array[0] <= 3)
 			top_sort_b(ps);
-		ft_printf("here5\n");
+		remove_from_chunks(ps);
 		if (ps->count > 3)
-			divide_to_a(ps, ps->count);
-		update_array(ps);
+			divide_b_to_a(ps, ps->count, ps->len_a, temp);
 	}
-// 	print_stacks(ps);
+	print_stack_a(ps);
+	print_stack_b(ps);
 }
 
 /*if the chunk is small or less than 3, you continue into sorting.
 if chunk is bigger, you cut it and send it back to a*/
 void	top_sort_b(t_ps *ps)
 {
+	ft_printf("do you go to top_sort_b\n");
 	if (ps->count == 2)
 	{
 		if (ps->b[0] < ps->b[1])

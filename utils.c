@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:36:09 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/09 14:39:11 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:22:19 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,30 +28,10 @@ int	find_min(t_ps *ps)
 	return (temp);
 }
 
-void	five_element(t_ps *ps)
+void	sort_reverse(t_ps *ps, int length)
 {
-	int	min;
-
-	if (sorted_orderly(ps->a, ps->len_a) == 1)
-		return ;
-	min = find_min(ps);
-	if (min == 1)
-		sa(ps);
-	if (min == 2)
-	{
-		ra(ps);
-		ra(ps);
-	}
-	if (min == 3)
-	{
-		rra(ps);
-		rra(ps);
-	}
-	if (min == 4)
-		rra(ps);
-	pb(ps);
-	four_element(ps);
-	pa(ps);
+	while (length-- >= 0)
+		pa(ps);
 	return ;
 }
 
@@ -84,7 +64,7 @@ void	check_rotate(t_ps *ps)
 	}
 }
 
-void	print_stacks(t_ps *ps)
+void	print_stack_a(t_ps *ps)
 {
 	int	i;
 
@@ -97,6 +77,12 @@ void	print_stacks(t_ps *ps)
 		i++;
 	}
 	ft_printf("\n");
+}
+
+void	print_stack_b(t_ps *ps)
+{
+	int	i;
+
 	ft_printf("stack b length is %d\n", ps->len_b);
 	i = 0;
 	ft_printf("stack b is ");
@@ -106,6 +92,12 @@ void	print_stacks(t_ps *ps)
 		i++;
 	}
 	ft_printf("\n");
+}
+
+void	print_array(t_ps *ps)
+{
+	int	i;
+
 	i = 0;
 	ft_printf("array is ");
 	while (i < ps->len_array)
@@ -123,17 +115,17 @@ void	find_median_b(t_ps *ps, int len)
 	int	j;
 	int	count;
 
-	if (len <= 3)
+	if (len <= 2)
 		exit(0);
 	half = len / 2;
 	i = 0;
 	while (i < len)
 	{
 		j = 0;
-		count = 1;
+		count = 0;
 		while (j < len)
 		{
-			if (ps->b[i] < ps->b[j])
+			if (ps->b[i] < ps->b[j] && i != j)
 				count++;
 			j++;
 		}
