@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:36:09 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/10 16:22:19 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/11 21:32:04 by yoonseonlee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,12 @@ void	print_stack_a(t_ps *ps)
 	int	i;
 
 	i = 0;
-	ft_printf("stack a length is %d\n", ps->len_a);
-	ft_printf("stack a is ");
+	ft_printf("\n");
+	ft_printf("\n");
+	ft_printf("stack a is   ");
 	while (i < ps->len_a)
 	{
-		ft_printf("%d ", ps->a[i]);
+		ft_printf("%d  ", ps->a[i]);
 		i++;
 	}
 	ft_printf("\n");
@@ -83,14 +84,15 @@ void	print_stack_b(t_ps *ps)
 {
 	int	i;
 
-	ft_printf("stack b length is %d\n", ps->len_b);
 	i = 0;
-	ft_printf("stack b is ");
+	ft_printf("\n");
+	ft_printf("stack b is   ");
 	while (i < ps->len_b)
 	{
-		ft_printf("%d ", ps->b[i]);
+		ft_printf("%d  ", ps->b[i]);
 		i++;
 	}
+	ft_printf("\n");
 	ft_printf("\n");
 }
 
@@ -99,6 +101,8 @@ void	print_array(t_ps *ps)
 	int	i;
 
 	i = 0;
+	ft_printf("stack a length is %d\n", ps->len_a);
+	ft_printf("stack b length is %d\n", ps->len_b);
 	ft_printf("array is ");
 	while (i < ps->len_array)
 	{
@@ -116,7 +120,7 @@ void	find_median_b(t_ps *ps, int len)
 	int	count;
 
 	if (len <= 2)
-		exit(0);
+		return ;
 	half = len / 2;
 	i = 0;
 	while (i < len)
@@ -125,7 +129,7 @@ void	find_median_b(t_ps *ps, int len)
 		count = 0;
 		while (j < len)
 		{
-			if (ps->b[i] < ps->b[j] && i != j)
+			if ((ps->b[i] < ps->b[j]) && i != j)
 				count++;
 			j++;
 		}

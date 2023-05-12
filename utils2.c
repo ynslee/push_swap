@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:03 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/10 17:10:01 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/11 21:38:29 by yoonseonlee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,38 +15,35 @@
 /*move the chunks back to stack_a*/
 void	divide_b_to_a(t_ps *ps, int length, int a_before, int count)
 {
-	int	i;
-
-	i = -1;
 	ps->count = 0;
-	ft_printf("----------cuting b to a -------\n");
-	print_stack_a(ps);
-	print_stack_b(ps);
-	if (sorted_reverse(ps->b, length) == 1)
-	{
-		sort_reverse(ps, length);
-		return ;
-	}
+	ft_printf("--------------cuting b to a -----------\n");
 	find_median_b(ps, length);
-	ft_printf ("median is %d\n", ps->median);
-	while (++i < length)
+	ft_printf ("b_median is %d\n", ps->median);
+	while (ps->len_a - a_before < length / 2)
 	{
-		if (ps->b[0] > ps->median)
+		if (ps->b[0] > ps->median || ((ps->b[0] > ps->median) && (length % 2 == 0)))
 			pa(ps);
-		else if (ps->count++ <= length / 2)
+		else
+		{	
+			ps->count++;
 			rb(ps);
+		}
 	}
 	count = ps->count;
 	ft_printf("count is %d\n", count);
-	// if (ps->len_a - a_before <= 3)
-	// 	top_sort_a(ps, ps->len_a - a_before);
 	add_to_chunks(ps, ps->count);
-	while (count-- > 0)
+	while (count-- > 0 && length != ps->len_b)
 		rrb(ps);
 	print_stack_a(ps);
 	print_stack_b(ps);
 	print_array(ps);
-	//divide_a_to_b(ps, ps->len_a - a_before);
+	ft_printf("----------------ended------------------\n");
+	if (ps->len_a - a_before <= 3)
+	{
+		top_sort_a(ps, ps->len_a - a_before);
+		return ;
+	}
+	divide_a_to_b(ps, ps->len_a - a_before);
 }
 
 /*move the chunks back to stack_b after moving it to stack_a*/
@@ -58,9 +55,15 @@ void	divide_a_to_b(t_ps *ps, int a_leftover)
 	ps->count = 0;
 	if (sorted_orderly(ps->a, ps->len_a) == 1)
 		return ;
+	ft_printf("----------cuting a again to b ---------\n");
 	if (a_leftover <= 3)
 	{
+		ft_printf("----------just sorts a becasue it is smaller than 3---------\n");
 		top_sort_a(ps, a_leftover);
+		print_stack_a(ps);
+		print_stack_b(ps);
+		print_array(ps);
+		ft_printf("------------------------ended-------------------------\n");
 		return ;
 	}
 	find_median_a(ps, a_leftover);
@@ -74,12 +77,17 @@ void	divide_a_to_b2(t_ps *ps, int i, int leftover)
 	length = leftover;
 	while (length-- > 0)
 	{
-		if (ps->a[0] <= ps->median)
+		if (ps->a[0] < ps->median)
 		{
 			pb(ps);
 			ps->count++;
 		}
-		else
+		else if (ps->a[0] == ps->median && leftover % 2 == 0)
+		{
+			pb(ps);
+			ps->count++;
+		}
+		else if (ps->a[0] >= ps->median)
 		{
 			ra(ps);
 			i++;
@@ -88,8 +96,12 @@ void	divide_a_to_b2(t_ps *ps, int i, int leftover)
 	while (i-- > 0)
 		rra(ps);
 	add_to_chunks(ps, ps->count);
+	print_stack_a(ps);
+	print_stack_b(ps);
+	print_array(ps);
 	if ((leftover - ps->count) > 3)
 		divide_a_to_b(ps, leftover - ps->count);
+	ft_printf("-----------------ended-----------------\n");
 }
 
 /*sort top 2 or 3 of the stack_a*/
@@ -131,16 +143,16 @@ void	find_median_a(t_ps *ps, int len)
 	int	count;
 
 	if (len <= 3)
-		exit(0);
+		ft_printf("length of 3 numbers were not handled properly");
 	half = len / 2;
 	i = 0;
 	while (i < len)
 	{
 		j = 0;
-		count = 1;
+		count = 0;
 		while (j < len)
 		{
-			if (ps->a[i] < ps->a[j])
+			if (ps->a[i] < ps->a[j] && i != j)
 				count++;
 			j++;
 		}

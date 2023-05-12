@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split_one_str_out.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:59:54 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/04 13:08:25 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/11 19:54:27 by yoonseonlee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ static int	ft_count_words_one_str_out(char const *s, char c)
 
 static char	*ft_freeall_one_str_out(char *out)
 {
-	int	i;
-
-	i = 0;
 	free(out);
 	out = NULL;
 	return (NULL);

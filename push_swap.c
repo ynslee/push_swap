@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:11:53 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/09 14:40:38 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/11 20:53:36 by yoonseonlee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,19 @@ the instruction phase. The program must display "Error\n" on standarderror.
 int	main(int argc, char **argv)
 {
 	t_ps	ps;
-	int		i;
 
-	i = 0;
 	if (argc <= 2)
 		return (0);
+	ft_printf("-----------------START FROM HERE-----------------\n");
 	get_real_args(argc, argv, &ps);
 	if (init_stack(&ps) != 1)
 		exit(0);
 	check_real_argv(&ps);
+	print_stack_a(&ps);
+	print_stack_b(&ps);
+	print_array(&ps);
 	sort_init(&ps);
+	ft_printf("--------------------ENDS HERE--------------------\n");
 
 	return (0);
 }

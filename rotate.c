@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:00:09 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/04 13:08:25 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/11 16:08:52 by yoonseonlee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ra(t_ps *ps)
 	// 	ft_printf("now stack a[%d] is %d\n", i, ps->a[i]);
 	// 	i++;
 	// }
-	ft_putstr_fd("ra\n", 2);
+	ft_printf("ra\n");
 }
 
 void	rb(t_ps *ps)
@@ -54,7 +54,7 @@ void	rb(t_ps *ps)
 	ps->b[i] = temp;
 	ps->number_amount++;
 	i = 0;
-	ft_putstr_fd("rb\n", 2);
+	ft_printf("rb\n");
 }
 
 void	rr(t_ps *ps)
@@ -64,5 +64,5 @@ void	rr(t_ps *ps)
 	ra(ps);
 	rb(ps);
 	ps->number_amount++;
-	ft_putstr_fd("rr\n", 2);
+	ft_printf("rr\n");
 }

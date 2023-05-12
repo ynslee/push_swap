@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_real_args.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:20:20 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/04 13:08:25 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/11 20:39:50 by yoonseonlee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,6 @@ int	get_real_argv(t_ps *ps, char **argv)
 
 int	get_real_args(int argc, char **argv, t_ps *ps)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 0;
 	ps->real_argc = get_real_argc(argc, argv);
 	if (ps->real_argc == argc - 1)
 		ps->real_argv = argv + 1;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+         #
+#    By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 11:43:16 by yoonslee          #+#    #+#              #
-#    Updated: 2023/05/10 15:12:46 by yoonslee         ###   ########.fr        #
+#    Updated: 2023/05/11 20:38:10 by yoonseonlee      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,10 @@ all:$(NAME)
 
 $(NAME):$(OBJS)
 		make -C libft all
-		cc $(OBJS) -o $(NAME) libft/libft.a
+		cc $(FLAGS) $(OBJS) -o $(NAME) libft/libft.a
 
 $(OBJS):$(SRCS)
-		cc -c $(SRCS) -I $(HEADER)
+		cc -c $(FLAGS) $(SRCS) -I $(HEADER)
 
 clean:
 		rm -rf $(OBJS)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:17:42 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/04 13:08:25 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/11 19:51:13 by yoonseonlee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	ft_strcmp(const char *s1, const char *s2)
 	st1 = (unsigned char *)s1;
 	st2 = (unsigned char *)s2;
 	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
+	while (st1[i] && st2[i] && st1[i] == st2[i])
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		if (st1[i] != st2[i])
+			return (st1[i] - st2[i]);
 		i++;
 	}
 	return (s1[i] - s2[i]);

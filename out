@@ -1,0 +1,216 @@
+-----------------START FROM HERE-----------------
+
+
+stack a is   100  -2  4  3  10  11  9  7  26  40  53  62  29  18  -34  400  79  30  
+
+stack b is   
+
+stack a length is 18
+stack b length is 0
+array is 0 
+--------------cuting a to b -----------
+ra
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+pb
+a_median is 18
+count is 9
+
+
+stack a is   400  79  30  100  26  40  53  62  29  
+
+stack b is   -34  18  7  9  11  10  3  4  -2  
+
+stack a length is 9
+stack b length is 9
+array is 9 0 
+-----------------------------------------
+--------------cuting a to b -----------
+ra
+ra
+pb
+ra
+pb
+pb
+ra
+ra
+pb
+a_median is 53
+count is 4
+
+
+stack a is   400  79  100  53  62  
+
+stack b is   29  40  26  30  -34  18  7  9  11  10  3  4  -2  
+
+stack a length is 5
+stack b length is 13
+array is 4 9 0 
+-----------------------------------------
+--------------cuting a to b -----------
+----------sort the leftover of stack_a ---------
+rra
+rra
+pb
+pb
+ra
+pa
+pa
+
+
+stack a is   53  62  79  100  400  
+
+stack b is   29  40  26  30  -34  18  7  9  11  10  3  4  -2  
+
+--------------------------------------------------
+--------------before cutting stacks-----------
+
+
+stack a is   53  62  79  100  400  
+
+stack b is   29  40  26  30  -34  18  7  9  11  10  3  4  -2  
+
+stack a length is 5
+stack b length is 13
+array is 4 9 0 
+---------------------------------------
+--------------cuting b to a -----------
+
+
+stack a is   53  62  79  100  400  
+
+stack b is   29  40  26  30  -34  18  7  9  11  10  3  4  -2  
+
+stack a length is 5
+stack b length is 13
+array is 9 0 
+---------------------------------------
+--------------cuting b to a -----------
+b_median is 29
+rb
+pa
+rb
+pa
+count is 2
+rrb
+rrb
+
+
+stack a is   30  40  53  62  79  100  400  
+
+stack b is   29  26  -34  18  7  9  11  10  3  4  -2  
+
+stack a length is 7
+stack b length is 11
+array is 2 9 0 
+----------------ended------------------
+--------------cuting b to a -----------
+pa
+pa
+pa
+
+
+stack a is   -34  26  29  30  40  53  62  79  100  400  
+
+stack b is   18  7  9  11  10  3  4  -2  
+
+stack a length is 10
+stack b length is 8
+array is 9 0 
+---------------------------------------
+--------------cuting b to a -----------
+
+
+stack a is   -34  26  29  30  40  53  62  79  100  400  
+
+stack b is   18  7  9  11  10  3  4  -2  
+
+stack a length is 10
+stack b length is 8
+array is 0 
+---------------------------------------
+--------------cuting b to a -----------
+b_median is 7
+pa
+rb
+pa
+pa
+pa
+count is 1
+rrb
+
+
+stack a is   10  11  9  18  -34  26  29  30  40  53  62  79  100  400  
+
+stack b is   7  3  4  -2  
+
+stack a length is 14
+stack b length is 4
+array is 1 0 
+----------------ended------------------
+----------cuting a again to b ---------
+pb
+ra
+pb
+ra
+rra
+rra
+
+
+stack a is   11  18  -34  26  29  30  40  53  62  79  100  400  
+
+stack b is   9  10  7  3  4  -2  
+
+stack a length is 12
+stack b length is 6
+array is 2 1 0 
+-----------------ended-----------------
+--------------cuting b to a -----------
+sb
+pa
+pa
+
+
+stack a is   9  10  11  18  -34  26  29  30  40  53  62  79  100  400  
+
+stack b is   7  3  4  -2  
+
+stack a length is 14
+stack b length is 4
+array is 1 0 
+---------------------------------------
+--------------cuting b to a -----------
+pa
+pa
+
+
+stack a is   3  7  9  10  11  18  -34  26  29  30  40  53  62  79  100  400  
+
+stack b is   4  -2  
+
+stack a length is 16
+stack b length is 2
+array is 0 
+---------------------------------------
+
+
+stack a is   3  7  9  10  11  18  -34  26  29  30  40  53  62  79  100  400  
+
+stack b is   4  -2  
+
+stack a length is 16
+stack b length is 2
+array is 0 
+--------------------ENDS HERE--------------------

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_algo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:36:08 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/10 16:58:23 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/11 21:15:25 by yoonseonlee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,22 @@ void	sort_init(t_ps *ps)
 		exit(0);
 	if (ps->len_a <= 5)
 	{
+		ft_printf("----------number amount is same and smaller than 5 ---------\n");
 		small_sort(ps);
+		print_stack_a(ps);
+		print_stack_b(ps);
+		ft_printf("----------------------------------------------------\n");
+
 		return ;
 	}
 	else if (ps->len_a > 5)
+	
 		sort_to_b(ps);
+	ft_printf("----------sort the leftover of stack_a ---------\n");
 	small_sort(ps);
+	print_stack_a(ps);
+	print_stack_b(ps);
+	ft_printf("--------------------------------------------------\n");
 	sort_continue(ps);
 	return ;
 }
@@ -32,25 +42,30 @@ void	sort_init(t_ps *ps)
 /*find the median and push it to stack b*/
 void	sort_to_b(t_ps *ps)
 {
-	int	i;
-	int	length;
+	int	len;
+	int b_before;
 
-	i = 0;
+	ft_printf("--------------cuting a to b -----------\n");
+	if(ps->len_a <= 5)
+		return ;
+	b_before = ps->len_b;
 	ps->count = 0;
-	find_median(ps);
-	length = ps->len_a;
-	while (i < length)
+	find_median_a(ps, ps->len_a);
+	len = ps->len_a;
+	while ((ps->len_b - b_before) < (len / 2))
 	{
-		if (ps->a[0] < ps->median)
-		{
+		if (ps->a[0] < ps->median || (ps->a[0] == ps->median && len % 2 == 0))
 			pb(ps);
-			ps->count++;
-		}
 		else
 			check_rotate(ps);
-		i++;
 	}
-	add_to_chunks(ps, ps->count);
+	ft_printf ("a_median is %d\n", ps->median);
+	ft_printf("count is %d\n", ps->len_b - b_before);
+	add_to_chunks(ps, ps->len_b - b_before);
+	print_stack_a(ps);
+	print_stack_b(ps);
+	print_array(ps);
+	ft_printf("-----------------------------------------\n");
 	if (ps->len_a > 3)
 		sort_to_b(ps);
 }
