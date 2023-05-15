@@ -1,0 +1,442 @@
+-----------------START FROM HERE-----------------
+
+
+stack a is   3  10  -20  100  -34  89  78  120  70  -363  92  1045  -40  213  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 0 
+
+--------------cutting a to b -----------
+a_median is 70
+, length is 14
+pb
+pb
+pb
+ra
+pb
+ra
+ra
+ra
+pb
+pb
+ra
+ra
+pb
+ra
+a_median is 70
+count is 7
+
+
+stack a is   100  89  78  120  92  1045  213  
+
+stack b is   -40  -363  70  -34  -20  10  3  
+
+stack a length is 7
+stack b length is 7
+array is 7 0 
+
+-----------------------------------------
+--------------cutting a to b -----------
+a_median is 100
+, length is 7
+pb
+pb
+pb
+ra
+pb
+ra
+ra
+a_median is 100
+count is 4
+
+
+stack a is   120  1045  213  
+
+stack b is   92  78  89  100  -40  -363  70  -34  -20  10  3  
+
+stack a length is 3
+stack b length is 11
+array is 4 7 0 
+
+-----------------------------------------
+----------sort the leftover of stack_a ---------
+rra
+sa
+
+
+stack a is   120  213  1045  
+
+stack b is   92  78  89  100  -40  -363  70  -34  -20  10  3  
+
+--------------------------------------------------
+--------------before cutting stacks-----------
+
+
+stack a is   120  213  1045  
+
+stack b is   92  78  89  100  -40  -363  70  -34  -20  10  3  
+
+stack a length is 3
+stack b length is 11
+array is 4 7 0 
+
+----------------------------------------------
+-------------Loop through 4 nums in b-----------
+----------------cutting b to a -------------
+b_median is 89
+pa
+rb
+pa
+pa
+rb
+rrb
+rrb
+count is 2
+
+
+stack a is   100  89  92  120  213  1045  
+
+stack b is   78  -40  -363  70  -34  -20  10  3  
+
+stack a length is 6
+stack b length is 8
+array is 2 7 0 
+
+what is len_a - a_before?  3
+----------sort top a before divide a_to_b---------
+getting in to top sort a
+what is the length? 3
+sa
+ra
+sa
+pb
+rra
+pa
+
+
+stack a is   92  89  100  120  213  1045  
+
+stack b is   78  -40  -363  70  -34  -20  10  3  
+
+stack a length is 6
+stack b length is 8
+array is 2 7 0 
+
+------------------------ended-------------------------
+-------------Loop through 2 nums in b-----------
+-------------if array[0] of stack_b is reversed, sort it back-----------
+pa
+pa
+
+
+stack a is   -40  78  92  89  100  120  213  1045  
+
+stack b is   -363  70  -34  -20  10  3  
+
+stack a length is 8
+stack b length is 6
+array is 2 7 0 
+
+------------------------------------------------------------------------
+--------sorting top 3 of stack_b and before cutting from stack_b--------
+sb
+pa
+pa
+
+
+stack a is   -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   -34  -20  10  3  
+
+stack a length is 10
+stack b length is 4
+array is 2 7 0 
+
+------------------------------------------------------------------------
+-------------Loop through 7 nums in b-----------
+----------------cutting b to a -------------
+b_median is 89
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+count is 8
+
+
+stack a is   -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   -34  -20  10  3  
+
+stack a length is 10
+stack b length is 4
+array is 8 0 
+
+what is len_a - a_before?  0
+----------sort top a before divide a_to_b---------
+getting in to top sort a
+what is the length? 0
+pa
+
+
+stack a is   -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   -20  10  3  
+
+stack a length is 11
+stack b length is 3
+array is 8 0 
+
+------------------------ended-------------------------
+-------------Loop through 8 nums in b-----------
+----------------cutting b to a -------------
+b_median is 89
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+count is 9
+
+
+stack a is   -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   -20  10  3  
+
+stack a length is 11
+stack b length is 3
+array is 9 0 
+
+what is len_a - a_before?  0
+----------sort top a before divide a_to_b---------
+getting in to top sort a
+what is the length? 0
+pa
+
+
+stack a is   -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   10  3  
+
+stack a length is 12
+stack b length is 2
+array is 9 0 
+
+------------------------ended-------------------------
+-------------Loop through 9 nums in b-----------
+-------------if array[0] of stack_b is reversed, sort it back-----------
+pa
+pa
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 9 0 
+
+------------------------------------------------------------------------
+----------------cutting b to a -------------
+b_median is 89
+count is 10
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 10 0 
+
+what is len_a - a_before?  0
+----------sort top a before divide a_to_b---------
+getting in to top sort a
+what is the length? 0
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 10 0 
+
+------------------------ended-------------------------
+-------------Loop through 10 nums in b-----------
+----------------cutting b to a -------------
+b_median is 89
+count is 11
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 11 0 
+
+what is len_a - a_before?  0
+----------sort top a before divide a_to_b---------
+getting in to top sort a
+what is the length? 0
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 11 0 
+
+------------------------ended-------------------------
+-------------Loop through 11 nums in b-----------
+----------------cutting b to a -------------
+b_median is 89
+count is 12
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 12 0 
+
+what is len_a - a_before?  0
+----------sort top a before divide a_to_b---------
+getting in to top sort a
+what is the length? 0
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 12 0 
+
+------------------------ended-------------------------
+-------------Loop through 12 nums in b-----------
+----------------cutting b to a -------------
+b_median is 89
+count is 13
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 13 0 
+
+what is len_a - a_before?  0
+----------sort top a before divide a_to_b---------
+getting in to top sort a
+what is the length? 0
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 13 0 
+
+------------------------ended-------------------------
+-------------Loop through 13 nums in b-----------
+----------------cutting b to a -------------
+b_median is 89
+count is 14
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 14 0 
+
+what is len_a - a_before?  0
+----------sort top a before divide a_to_b---------
+getting in to top sort a
+what is the length? 0
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 14 0 
+
+------------------------ended-------------------------
+-------------Loop through 14 nums in b-----------
+----------------cutting b to a -------------
+b_median is 89
+count is 15
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 15 0 
+
+what is len_a - a_before?  0
+----------sort top a before divide a_to_b---------
+getting in to top sort a
+what is the length? 0
+
+
+stack a is   3  10  -20  -34  -363  70  -40  78  92  89  100  120  213  1045  
+
+stack b is   
+
+stack a length is 14
+stack b length is 0
+array is 15 0 
+
+------------------------ended-------------------------
+-------------Loop through 15 nums in b-----------
+----------------cutting b to a -------------

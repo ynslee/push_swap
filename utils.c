@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:36:09 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/11 21:32:04 by yoonseonlee      ###   ########.fr       */
+/*   Updated: 2023/05/12 11:10:51 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	find_min(t_ps *ps)
 	return (temp);
 }
 
-void	sort_reverse(t_ps *ps, int length)
+void	reverse_sort(t_ps *ps, int length)
 {
-	while (length-- >= 0)
+	while (length-- > 0)
 		pa(ps);
 	return ;
 }
@@ -109,6 +109,7 @@ void	print_array(t_ps *ps)
 		ft_printf("%d ", ps->array[i]);
 		i++;
 	}
+	ft_printf("\n");
 	ft_printf("\n");
 }
 

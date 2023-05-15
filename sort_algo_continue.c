@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_algo_continue.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:23:43 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/11 20:38:26 by yoonseonlee      ###   ########.fr       */
+/*   Updated: 2023/05/15 16:08:37 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,45 @@
 void	sort_continue(t_ps *ps)
 {
 	int	temp;
+	int	a_before;
 
+	a_before = ps->len_a;
 	ft_printf("--------------before cutting stacks-----------\n");
 	print_stack_a(ps);
 	print_stack_b(ps);
 	print_array(ps);
-	ft_printf("---------------------------------------\n");
+	ft_printf("----------------------------------------------\n");
+	ps->count = 0;
 	while (ps->array[0] != 0)
 	{
-		ft_printf("--------------cuting b to a -----------\n");
+		ft_printf("-------------Loop through %d nums in b-----------\n", ps->array[0]);
 		ps->count = ps->array[0];
 		temp = ps->count;
 		if (sorted_reverse(ps->b, temp) == 1)
-			sort_reverse(ps, temp);
-		else if (ps->array[0] <= 3)
+		{
+			ft_printf("-------------if array[0] of stack_b is reversed, sort it back-----------\n");
+			reverse_sort(ps, temp);
+			remove_from_chunks(ps);
+			print_stack_a(ps);
+			print_stack_b(ps);
+			print_array(ps);
+			ft_printf("------------------------------------------------------------------------\n");
+		}
+		else if (ps->count <= 3)
+		{
+			ft_printf("--------sorting top 3 of stack_b and before cutting from stack_b--------\n");
 			top_sort_b(ps);
-		remove_from_chunks(ps);
-		print_stack_a(ps);
-		print_stack_b(ps);
-		print_array(ps);
-		ft_printf("---------------------------------------\n");
+			remove_from_chunks(ps);
+			print_stack_a(ps);
+			print_stack_b(ps);
+			print_array(ps);
+			ft_printf("------------------------------------------------------------------------\n");
+		}
 		if (ps->count > 3)
+		{
+			remove_from_chunks(ps);
 			divide_b_to_a(ps, ps->count, ps->len_a, temp);
+		}
 	}
 	print_stack_a(ps);
 	print_stack_b(ps);

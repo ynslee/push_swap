@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:35:26 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/11 21:40:04 by yoonseonlee      ###   ########.fr       */
+/*   Updated: 2023/05/12 13:04:37 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ int	init_stack(t_ps	*ps)
 	ps->b = malloc(sizeof(int) * ps->len);
 	ps->array = malloc(sizeof(int) * 1);
 	if (!ps->a || !ps->b || !ps->array)
-	{
 		msg_error("malloc error", 1);
-		exit(0);
-	}
 	ps->number_amount = 0;
 	ps->len_a = ps->real_argc;
 	ps->len_b = 0;

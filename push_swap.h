@@ -6,7 +6,7 @@
 /*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 11:39:33 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/10 16:30:10 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/15 12:49:29 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,9 @@ void		divide_a_to_b2(t_ps *ps, int i, int leftover);
 void		top_sort_a(t_ps *ps, int length);
 void		find_median_b(t_ps *ps, int len);
 void		find_median_a(t_ps *ps, int len);
-void		sort_reverse(t_ps *ps, int length);
+void		reverse_sort(t_ps *ps, int length);
+void		free_all(t_ps *ps);
+void		free_char_array(t_ps *ps);
 
 /*allowed functions only*/
 void		sa(t_ps *ps);

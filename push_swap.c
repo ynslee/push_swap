@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:11:53 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/11 20:53:36 by yoonseonlee      ###   ########.fr       */
+/*   Updated: 2023/05/15 12:47:55 by yoonslee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,18 @@ the instruction phase. The program must display "Error\n" on standarderror.
 
 int	main(int argc, char **argv)
 {
-	t_ps	ps;
+	t_ps	*ps;
 
+	ps = malloc(sizeof(t_ps));
+	if (!ps)
+		msg_error("malloc fail", 1);
 	if (argc <= 2)
 		return (0);
-	ft_printf("-----------------START FROM HERE-----------------\n");
-	get_real_args(argc, argv, &ps);
-	if (init_stack(&ps) != 1)
-		exit(0);
-	check_real_argv(&ps);
-	print_stack_a(&ps);
-	print_stack_b(&ps);
-	print_array(&ps);
-	sort_init(&ps);
-	ft_printf("--------------------ENDS HERE--------------------\n");
-
+	get_real_args(argc, argv, ps);
+	if (init_stack(ps) != 1)
+		exit(1);
+	check_real_argv(ps);
+	sort_init(ps);
+	free_all(ps);
 	return (0);
 }
