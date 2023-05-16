@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_algo_continue.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:23:43 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/15 16:08:37 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/16 10:48:06 by yoonseonlee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 void	sort_continue(t_ps *ps)
 {
 	int	temp;
-	int	a_before;
 
-	a_before = ps->len_a;
 	ft_printf("--------------before cutting stacks-----------\n");
 	print_stack_a(ps);
 	print_stack_b(ps);
@@ -75,7 +73,7 @@ void	top_sort_b(t_ps *ps)
 		pa(ps);
 		sb(ps);
 	}
-	if (ps->count == 3 && ps->b[2] > ps->b[1] && ps->b[2] > ps->b[0])
+	else if (ps->count == 3 && ps->b[2] > ps->b[1] && ps->b[2] > ps->b[0])
 	{
 		if (ps->b[0] < ps->b[1])
 			sb(ps);
@@ -84,7 +82,7 @@ void	top_sort_b(t_ps *ps)
 		pa(ps);
 		rrb(ps);
 	}
-	if (ps->count == 3 && ps->b[1] > ps->b[0] && ps->b[1] > ps->b[2])
+	else if (ps->count == 3 && ps->b[1] > ps->b[0] && ps->b[1] > ps->b[2])
 		top_sort_b2(ps);
 	pa(ps);
 	pa(ps);

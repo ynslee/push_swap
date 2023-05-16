@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoonslee <yoonslee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoonseonlee <yoonseonlee@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:03 by yoonslee          #+#    #+#             */
-/*   Updated: 2023/05/15 17:15:23 by yoonslee         ###   ########.fr       */
+/*   Updated: 2023/05/16 09:22:32 by yoonseonlee      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,13 +213,11 @@ void	free_char_array(t_ps *ps)
 
 	i = 0;
 
-	while (ps->real_argv[i] != '\0')
+	while (ps->real_argv[i] != NULL)
 	{
 		free(ps->real_argv[i]);
 		ps->real_argv[i] = NULL;
 		i++;
 	}
-	//ft_printf("%s,%s,%s,%s, %s\n", ps->real_argv[0], ps->real_argv[1], ps->real_argv[2],ps->real_argv[3], ps->real_argv[4]);
-	//ft_printf("%p,%p,%p,%p, %p\n", ps->real_argv[0], ps->real_argv[1], ps->real_argv[2],ps->real_argv[3], ps->real_argv[4]);
 	free(ps->real_argv);
 }
